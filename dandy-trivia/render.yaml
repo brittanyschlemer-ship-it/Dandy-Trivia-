@@ -1,0 +1,19 @@
+# One-click deploy on Render (https://render.com): New > Blueprint > point at your repo.
+# A disk keeps in-progress games alive across restarts; it needs a paid instance.
+# On the free plan, delete the "disk" block and DATA_DIR line: the game works the same, but
+# a restart/redeploy will end any game in progress.
+services:
+  - type: web
+    name: dandy-trivia
+    runtime: node
+    plan: starter
+    buildCommand: npm ci --omit=dev
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATA_DIR
+        value: /var/data
+    disk:
+      name: trivia-state
+      mountPath: /var/data
+      sizeGB: 1

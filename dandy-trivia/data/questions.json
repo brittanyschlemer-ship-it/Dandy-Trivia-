@@ -1,0 +1,1948 @@
+[
+ {
+  "category": "Culture & Fun",
+  "difficulty": "easy",
+  "question": "What does the Dandy glossary affectionately call new employees?",
+  "correct": "Dandians",
+  "wrong": [
+   "Dandies",
+   "Dentists",
+   "Dandelions"
+  ],
+  "explanation": "The glossary's intro hopes to reduce head-scratching for new \"Dandians\".",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q001"
+ },
+ {
+  "category": "Culture & Fun",
+  "difficulty": "easy",
+  "question": "The glossary says its list of acronyms is just the tip of the what?",
+  "correct": "Iceberg",
+  "wrong": [
+   "Molar",
+   "Toothbrush",
+   "Crown"
+  ],
+  "explanation": "\"See below for just the tip of the iceberg.\"",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q002"
+ },
+ {
+  "category": "Culture & Fun",
+  "difficulty": "medium",
+  "question": "YADDI is an acronym the glossary hopes to make obsolete. What does it stand for?",
+  "correct": "Yet Another Due Date Issue",
+  "wrong": [
+   "Yet Another Design Defect Incident",
+   "Your Account Details Data Import",
+   "Yet Another Denture Delivery Inquiry"
+  ],
+  "explanation": "The glossary adds: \"let's kill the need for this acronym.\"",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q003"
+ },
+ {
+  "category": "Culture & Fun",
+  "difficulty": "hard",
+  "question": "DBCFPA is the name of a Dandy award. What does it stand for?",
+  "correct": "Dandy Best Cross Functional Partner Award",
+  "wrong": [
+   "Dandy Business Case Forecast Planning Approach",
+   "Digital Brand Content for Practice Acquisition",
+   "Dandy Best Customer Feedback Praise Award"
+  ],
+  "explanation": "It honors the best cross-functional partner.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q004"
+ },
+ {
+  "category": "Culture & Fun",
+  "difficulty": "medium",
+  "question": "IT warned Dandians in Slack about an uptick in attempted phishing via what unusual channel?",
+  "correct": "Calendar invites",
+  "wrong": [
+   "QR codes on lab packages",
+   "Fax machines",
+   "Voicemail transcripts"
+  ],
+  "explanation": "IT recommended treating calendar invites with the same suspicion as phishing emails.",
+  "source": "Slack #always-be-learning (Sep 2026)",
+  "id": "q005"
+ },
+ {
+  "category": "Culture & Fun",
+  "difficulty": "medium",
+  "question": "A recent #shipped post said Dandy was getting closer to the 'north star' of working out of which system only?",
+  "correct": "NetSuite",
+  "wrong": [
+   "Salesforce",
+   "Zendesk",
+   "Highspot"
+  ],
+  "explanation": "The post celebrated progress toward working out of NetSuite only.",
+  "source": "Slack #shipped (Oct 2026)",
+  "id": "q006"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "easy",
+  "question": "What does Dandy provide free to practices as part of its digital lab offering?",
+  "correct": "An intraoral scanner",
+  "wrong": [
+   "A 3D printer",
+   "A milling machine",
+   "A panoramic X-ray unit"
+  ],
+  "explanation": "Dandy advertises the 'world's smartest intraoral scanner' for free (site terms apply).",
+  "source": "meetdandy.com home page (public site; read via web search)",
+  "id": "q007"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "easy",
+  "question": "How does Dandy handle physical impression molds?",
+  "correct": "It doesn't accept them; it is 100% digital",
+  "wrong": [
+   "It accepts them for dentures only",
+   "It accepts them by mail with a surcharge",
+   "It accepts them only from new practices"
+  ],
+  "explanation": "Dandy states it does not accept physical impressions.",
+  "source": "meetdandy.com/labs (public site; read via web search, direct fetch was blocked)",
+  "id": "q008"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "medium",
+  "question": "In which two states are Dandy's US manufacturing facilities located?",
+  "correct": "Utah and Texas",
+  "wrong": [
+   "New York and New Jersey",
+   "California and Arizona",
+   "Florida and Georgia"
+  ],
+  "explanation": "The site lists labs in Lehi, UT and Carrollton, TX.",
+  "source": "meetdandy.com/labs (public site; read via web search, direct fetch was blocked)",
+  "id": "q009"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "easy",
+  "question": "Dandy's Texas manufacturing facility is in a suburb of which city?",
+  "correct": "Dallas",
+  "wrong": [
+   "Houston",
+   "Austin",
+   "San Antonio"
+  ],
+  "explanation": "Carrollton, TX is a Dallas suburb.",
+  "source": "meetdandy.com/labs (public site; read via web search, direct fetch was blocked)",
+  "id": "q010"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "medium",
+  "question": "Dandy's denture workflow is advertised as requiring how many appointments?",
+  "correct": "Two",
+  "wrong": [
+   "One",
+   "Three",
+   "Four"
+  ],
+  "explanation": "Dandy promotes its 2-appointment denture workflow.",
+  "source": "meetdandy.com/labs (public site; read via web search, direct fetch was blocked)",
+  "id": "q011"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "easy",
+  "question": "Dandy describes itself as building the modern operating system for what?",
+  "correct": "Dentistry",
+  "wrong": [
+   "Orthodontics",
+   "Dental insurance",
+   "Dental education"
+  ],
+  "explanation": "Dandy's boilerplate: 'building the modern operating system for dentistry'.",
+  "source": "Dandy press release, Apr 22 2025 (meetdandy.com/newsroom)",
+  "id": "q012"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "medium",
+  "question": "In April 2025 Dandy announced Cong Yu as its new what?",
+  "correct": "Head of Engineering",
+  "wrong": [
+   "CEO",
+   "Head of People",
+   "Head of Customer Experience"
+  ],
+  "explanation": "Dandy named Cong Yu Head of Engineering to lead AI-powered design and manufacturing.",
+  "source": "Dandy press release, Apr 22 2025 (meetdandy.com/newsroom)",
+  "id": "q013"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "hard",
+  "question": "Before joining Dandy, Cong Yu most recently served as VP of Engineering at which company?",
+  "correct": "Celonis",
+  "wrong": [
+   "Amazon",
+   "Uber",
+   "Waymo"
+  ],
+  "explanation": "The release says he most recently led AI at Celonis; earlier he was at Google Research.",
+  "source": "Dandy press release, Apr 22 2025 (meetdandy.com/newsroom)",
+  "id": "q014"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "medium",
+  "question": "In that April 2025 release, who was quoted as Dandy's CEO?",
+  "correct": "Daniel Hanover",
+  "wrong": [
+   "Cong Yu",
+   "Lisa Duron",
+   "Joe Lynch"
+  ],
+  "explanation": "Daniel Hanover is quoted as CEO.",
+  "source": "Dandy press release, Apr 22 2025 (meetdandy.com/newsroom)",
+  "id": "q015"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "medium",
+  "question": "Dandy said it surpassed what revenue milestone in its first two years?",
+  "correct": "$100 million",
+  "wrong": [
+   "$10 million",
+   "$500 million",
+   "$1 billion"
+  ],
+  "explanation": "The release says Dandy passed $100 million in revenue in its first two years.",
+  "source": "Dandy press release, Apr 22 2025 (meetdandy.com/newsroom)",
+  "id": "q016"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "hard",
+  "question": "Dandy planned to hire how many engineers in 2025, many in remote roles?",
+  "correct": "More than 50",
+  "wrong": [
+   "About 10",
+   "About 200",
+   "More than 500"
+  ],
+  "explanation": "The release says it planned to hire more than 50 engineers in 2025.",
+  "source": "Dandy press release, Apr 22 2025 (meetdandy.com/newsroom)",
+  "id": "q017"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "medium",
+  "question": "According to Dandy's careers page, how many people already have a Dandy product in their mouth?",
+  "correct": "Over 2 million",
+  "wrong": [
+   "Over 200,000",
+   "Over 20 million",
+   "Over 200 million"
+  ],
+  "explanation": "The careers page says over 2 million people already have a Dandy product.",
+  "source": "meetdandy.com/careers (public site; read via web search)",
+  "id": "q018"
+ },
+ {
+  "category": "Culture & Fun",
+  "difficulty": "medium",
+  "question": "Dandy's careers page says its culture is built around what?",
+  "correct": "Flexibility and trust",
+  "wrong": [
+   "Mandatory office days",
+   "Rotating on-call shifts",
+   "Annual relocation"
+  ],
+  "explanation": "The page highlights flexibility, with tools and trust to do your best work.",
+  "source": "meetdandy.com/careers (public site; read via web search)",
+  "id": "q019"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "medium",
+  "question": "Dandy's 2023 'Dental Study: Patient Experience' surveyed how many US adults?",
+  "correct": "600",
+  "wrong": [
+   "60",
+   "6,000",
+   "60,000"
+  ],
+  "explanation": "Isurus Market Research surveyed 600 Americans aged 26+.",
+  "source": "Dandy Dental Study press release, PRNewswire, Jul 17 2023",
+  "id": "q020"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "hard",
+  "question": "In that study, what percent of people looking for a new dentist use online reviews?",
+  "correct": "67%",
+  "wrong": [
+   "25%",
+   "50%",
+   "90%"
+  ],
+  "explanation": "67% use online reviews; Google was most popular (81%).",
+  "source": "Dandy Dental Study press release, PRNewswire, Jul 17 2023",
+  "id": "q021"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "medium",
+  "question": "How many CE credits did Dandy's free virtual 'Digital Summit' offer?",
+  "correct": "2",
+  "wrong": [
+   "1",
+   "4",
+   "6"
+  ],
+  "explanation": "The summit promised 2 CE credits.",
+  "source": "Dandy LinkedIn company page",
+  "id": "q022"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "hard",
+  "question": "Dandy celebrated being named a Built In 'Best Place to Work' in a post using which year's hashtag?",
+  "correct": "2024",
+  "wrong": [
+   "2021",
+   "2022",
+   "2026"
+  ],
+  "explanation": "The post used #2024BuiltInBest.",
+  "source": "Dandy LinkedIn company page",
+  "id": "q023"
+ },
+ {
+  "category": "Products & Digital Dentistry",
+  "difficulty": "medium",
+  "question": "Which denture line did Dandy announce launching on September 29, 2026?",
+  "correct": "Fusion",
+  "wrong": [
+   "Chairside",
+   "Vision",
+   "Dante"
+  ],
+  "explanation": "Dandy launched the Fusion denture line.",
+  "source": "Dandy press release, Sep 29 2026 (GlobeNewswire headline)",
+  "id": "q024"
+ },
+ {
+  "category": "Company Facts",
+  "difficulty": "hard",
+  "question": "In July 2026 Dandy announced a partnership with which university's new College of Dental Medicine?",
+  "correct": "Yeshiva University",
+  "wrong": [
+   "NYU",
+   "Columbia University",
+   "University of Pennsylvania"
+  ],
+  "explanation": "Partnership to power digital dentistry education.",
+  "source": "Dandy press release, Jul 28 2026 (GlobeNewswire headline)",
+  "id": "q025"
+ },
+ {
+  "category": "Products & Digital Dentistry",
+  "difficulty": "easy",
+  "question": "What does Dandy's Live Design Review let dentists do?",
+  "correct": "Refine a design with a lab tech on a shared 3D model before production",
+  "wrong": [
+   "Print crowns in the office",
+   "Order supplies by voice",
+   "Schedule patient appointments"
+  ],
+  "explanation": "It enables real-time collaboration on a shared CAD model before production.",
+  "source": "Dandy press release, May 22 2025 (meetdandy.com/newsroom)",
+  "id": "q026"
+ },
+ {
+  "category": "Products & Digital Dentistry",
+  "difficulty": "medium",
+  "question": "Dandy's May 2025 launch added real-time features to which software?",
+  "correct": "Chairside and case management software",
+  "wrong": [
+   "Payroll software",
+   "Aligner treatment-planning only",
+   "Dental insurance billing"
+  ],
+  "explanation": "The suite extended Dandy's Chairside and case-management tools.",
+  "source": "Dandy press release, May 22 2025 (meetdandy.com/newsroom)",
+  "id": "q027"
+ },
+ {
+  "category": "Products & Digital Dentistry",
+  "difficulty": "medium",
+  "question": "Dandy says a lab tech can join the operatory in about how long?",
+  "correct": "60 seconds",
+  "wrong": [
+   "5 minutes",
+   "15 minutes",
+   "24 hours"
+  ],
+  "explanation": "'In 60 seconds, a lab-tech joins your op.'",
+  "source": "meetdandy.com/labs (public site; read via web search, direct fetch was blocked)",
+  "id": "q028"
+ },
+ {
+  "category": "Products & Digital Dentistry",
+  "difficulty": "medium",
+  "question": "Dandy's Digital Implant Readiness workflow helps practices order what in advance?",
+  "correct": "Scan bodies",
+  "wrong": [
+   "Surgical guides",
+   "Healing caps",
+   "Bite registrations"
+  ],
+  "explanation": "It helps order scan bodies beforehand (see also SB).",
+  "source": "meetdandy.com/labs (public site; read via web search, direct fetch was blocked)",
+  "id": "q029"
+ },
+ {
+  "category": "Products & Digital Dentistry",
+  "difficulty": "medium",
+  "question": "Dandy's mandibular advancement devices are positioned as an alternative to what?",
+  "correct": "CPAP",
+  "wrong": [
+   "Night guards",
+   "Retainers",
+   "Fluoride trays"
+  ],
+  "explanation": "They are offered as a CPAP alternative for obstructive sleep apnea.",
+  "source": "meetdandy.com/labs (public site; read via web search, direct fetch was blocked)",
+  "id": "q030"
+ },
+ {
+  "category": "Products & Digital Dentistry",
+  "difficulty": "easy",
+  "question": "Which of these product categories does Dandy offer?",
+  "correct": "Clear aligners",
+  "wrong": [
+   "Hearing aids",
+   "Orthopedic implants",
+   "X-ray machines"
+  ],
+  "explanation": "Dandy lists clear aligners among its services.",
+  "source": "meetdandy.com/labs (public site; read via web search, direct fetch was blocked)",
+  "id": "q031"
+ },
+ {
+  "category": "Products & Digital Dentistry",
+  "difficulty": "easy",
+  "question": "What is Dandy's Chairside software designed to do?",
+  "correct": "Guide practices step by step through scanning",
+  "wrong": [
+   "Mill crowns on the lab floor",
+   "Track payroll",
+   "Edit X-rays"
+  ],
+  "explanation": "The site describes Chairside as guiding you through each scanning step.",
+  "source": "meetdandy.com/labs (public site; read via web search, direct fetch was blocked)",
+  "id": "q032"
+ },
+ {
+  "category": "Products & Digital Dentistry",
+  "difficulty": "medium",
+  "question": "What is the name of Dandy's branded intraoral scanner?",
+  "correct": "Dandy Vision",
+  "wrong": [
+   "Dandy Lens",
+   "Dandy Scope",
+   "Dandy Snap"
+  ],
+  "explanation": "Slack discussions refer to Vision scanners.",
+  "source": "Slack #proj-vision-chairside-epd; Institute of Digital Dentistry review (Mar 2026)",
+  "id": "q033"
+ },
+ {
+  "category": "Products & Digital Dentistry",
+  "difficulty": "hard",
+  "question": "A May 2026 Slack analysis compared Vision and Trios scans at the prep site. How does Vision's mesh compare?",
+  "correct": "Higher density (shorter average edge length)",
+  "wrong": [
+   "Identical density",
+   "Lower density",
+   "Cannot be measured"
+  ],
+  "explanation": "Average edge length was about 0.07mm for Vision vs 0.1mm for Trios.",
+  "source": "Slack #proj-vision-chairside-epd (May 2026)",
+  "id": "q034"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "easy",
+  "question": "What does DDC stand for at Dandy?",
+  "correct": "Dandy Design Center",
+  "wrong": [
+   "Digital Dental Cloud",
+   "Dandy Delivery Center",
+   "Direct Dentist Care"
+  ],
+  "explanation": "DDC is where designers create restorations.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q035"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "DDE is the internal CAD application designers use. What does it stand for?",
+  "correct": "Dandy Design Editor",
+  "wrong": [
+   "Digital Design Engine",
+   "Dandy Dental Estimator",
+   "Direct Design Environment"
+  ],
+  "explanation": "DDE is the internal CAD app used to design restoratives.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF); Slack #proj-vision-chairside-epd",
+  "id": "q036"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does DANTE stand for?",
+  "correct": "Dandy Automated Natural prosThetics Engine",
+  "wrong": [
+   "Dandy Automated Neural Treatment Estimator",
+   "Digital Anatomy and Tooth Enhancement",
+   "Dandy Augmented Neural Tooth Engine"
+  ],
+  "explanation": "Note the capital T hiding in 'prosThetics'.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q037"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does Dandy's in-house ML model DANTE generate designs for?",
+  "correct": "Crowns",
+  "wrong": [
+   "Aligners",
+   "Dentures",
+   "Night guards"
+  ],
+  "explanation": "DANTE is trained by the CAD/ML team to generate crown designs.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF); Slack #ml-dante-development",
+  "id": "q038"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "easy",
+  "question": "RBR is the company's north star for quality. What does it stand for?",
+  "correct": "Refab or Bad Review",
+  "wrong": [
+   "Revenue Before Returns",
+   "Refund and Billing Rate",
+   "Rush Batch Release"
+  ],
+  "explanation": "RBR is the share of orders ending in a refabrication or bad review.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q039"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does RBR measure?",
+  "correct": "The % of orders that resulted in a refab or bad review",
+  "wrong": [
+   "The % of orders shipped late",
+   "Average revenue per practice",
+   "The % of practices that are ramped"
+  ],
+  "explanation": "RBR is Dandy's quality north star.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q040"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "easy",
+  "question": "What does OTD stand for?",
+  "correct": "On-time Delivery",
+  "wrong": [
+   "Order To Dentist",
+   "Out of Date",
+   "Operations Throughput Dashboard"
+  ],
+  "explanation": "OTD = % of orders delivered on or before the original ETA.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q041"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "OTD is measured against which date?",
+  "correct": "The original ETA given to the customer at order",
+  "wrong": [
+   "The ship-by date",
+   "The designer's promised finish time",
+   "The average TAT for that product"
+  ],
+  "explanation": "On time means on or before the original ETA.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q042"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does OTS stand for?",
+  "correct": "On-time Shipping",
+  "wrong": [
+   "Order Tracking System",
+   "Outbound Tray Sorting",
+   "Overnight Ship Service"
+  ],
+  "explanation": "OTS measures orders shipped on or before the original ship-by date.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q043"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "easy",
+  "question": "What does TAT stand for?",
+  "correct": "Turnaround Time",
+  "wrong": [
+   "Total Appointment Time",
+   "Tooth Alignment Tracker",
+   "Time After Trial"
+  ],
+  "explanation": "Planned TATs exist for each major stage.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q044"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "Dandy sets planned TATs for which three major stages?",
+  "correct": "Design, fabrication, and shipping",
+  "wrong": [
+   "Scanning, billing, and support",
+   "Design, QA, and billing",
+   "Sales, onboarding, and training"
+  ],
+  "explanation": "Planned vs actual TAT helps explain OTD performance.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q045"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "easy",
+  "question": "What does DRI stand for?",
+  "correct": "Directly Responsible Individual",
+  "wrong": [
+   "Dentist Request Intake",
+   "Design Review Initiative",
+   "Digital Records Index"
+  ],
+  "explanation": "The person ultimately responsible for a decision or project.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q046"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does DICE stand for in Dandy's support world?",
+  "correct": "Designated Interruption Coverage Engineer",
+  "wrong": [
+   "Digital Implant Case Evaluator",
+   "Daily Incident Command Executive",
+   "Design Intake Control Experiment"
+  ],
+  "explanation": "DICE is a support (on-call) rotation.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q047"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does SLF stand for?",
+  "correct": "Small Lab Feel",
+  "wrong": [
+   "Single Location Facility",
+   "Scan Level Feedback",
+   "Standard Lab Format"
+  ],
+  "explanation": "SLF captures the feeling of a small, personal lab.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q048"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does FMR stand for?",
+  "correct": "Flag Monitor React",
+  "wrong": [
+   "Fabrication Mill Run",
+   "First Manufacturing Release",
+   "Final Margin Review"
+  ],
+  "explanation": "Listed in the glossary as Flag Monitor React.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q049"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does FTL stand for?",
+  "correct": "Failure to Launch",
+  "wrong": [
+   "Fast Turn Lab",
+   "Full Tooth Library",
+   "Forward Tracking Log"
+  ],
+  "explanation": "Listed in the glossary as Failure to Launch.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q050"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "easy",
+  "question": "What does LDR stand for?",
+  "correct": "Live Design Review",
+  "wrong": [
+   "Lab Delivery Report",
+   "Late Delivery Rate",
+   "Lower Denture Rim"
+  ],
+  "explanation": "A live session reviewing a design with the practice.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q051"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "easy",
+  "question": "What does LSR stand for?",
+  "correct": "Live Scan Review",
+  "wrong": [
+   "Lab Shipping Receipt",
+   "Lingual Surface Record",
+   "Large Scale Release"
+  ],
+  "explanation": "Live review of a scan while the patient is in the chair.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q052"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does VDR stand for?",
+  "correct": "Video Design Review",
+  "wrong": [
+   "Virtual Denture Registration",
+   "Verified Design Record",
+   "Vertical Dimension Reading"
+  ],
+  "explanation": "Part of the Visual Interactions workflow.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q053"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "The Visual Interactions (VI) team initially spanned which two workflows?",
+  "correct": "VDR and LDR",
+  "wrong": [
+   "LSR and DDP",
+   "DDE and DANTE",
+   "OTD and OTS"
+  ],
+  "explanation": "VI initially spanned Video Design Review and Live Design Review.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q054"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does CST stand for?",
+  "correct": "Clinical Support Team",
+  "wrong": [
+   "Customer Success Team",
+   "Case Scheduling Tool",
+   "Crown & Smile Technicians"
+  ],
+  "explanation": "CST supports practices on clinical questions.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q055"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "The Clinical Support Specialist (CSS) role was formerly known as what?",
+  "correct": "Tier 2",
+  "wrong": [
+   "Tier 1",
+   "Tier 3",
+   "Level A"
+  ],
+  "explanation": "CSS was formerly Tier 2.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q056"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "The Product Support Team (PST) was formerly known as what?",
+  "correct": "Tier 1",
+  "wrong": [
+   "Tier 2",
+   "Dentist Experience",
+   "Support Level 0"
+  ],
+  "explanation": "PST was formerly Tier 1.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q057"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "Practice Partnership & Retention (PPR) was formerly called what?",
+  "correct": "Dentist Experience",
+  "wrong": [
+   "Customer Intelligence",
+   "Partner Service",
+   "Account Management"
+  ],
+  "explanation": "PPR was formerly Dentist Experience.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q058"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "DX can stand for Developer Experience or what else?",
+  "correct": "Dentist Experience",
+  "wrong": [
+   "Design Extraction",
+   "Digital Express",
+   "Delivery Exchange"
+  ],
+  "explanation": "The glossary lists both meanings.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q059"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "DDP is also known as what?",
+  "correct": "Wax ups",
+  "wrong": [
+   "Kickbacks",
+   "Try-ins",
+   "Scan stitching"
+  ],
+  "explanation": "DDP = Digital Design Preview, AKA wax ups.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q060"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does DVD stand for at Dandy?",
+  "correct": "Dandy Verified Design",
+  "wrong": [
+   "Dental Veneer Delivery",
+   "Denture Variation Data",
+   "Digital Video Dentistry"
+  ],
+  "explanation": "Not the disc kind.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q061"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does UPD track for DDC designers?",
+  "correct": "Units Per Day (designs produced in a day)",
+  "wrong": [
+   "Updates Per Deployment",
+   "Unique Patients Daily",
+   "Uptime Per Device"
+  ],
+  "explanation": "UPD = Units Per Day.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q062"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does UTA stand for?",
+  "correct": "Unit Time Allotment",
+  "wrong": [
+   "Universal Tooth Alignment",
+   "Unit Throughput Average",
+   "Upper Tooth Arch"
+  ],
+  "explanation": "The standard time allocated to process a single unit on a task.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q063"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does GDS stand for?",
+  "correct": "Global Design Squad",
+  "wrong": [
+   "Group Dental Services",
+   "General Design Standard",
+   "Great Dandy Style"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q064"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does AMP stand for?",
+  "correct": "Aligner Mentorship Program",
+  "wrong": [
+   "Advanced Milling Process",
+   "Automated Manufacturing Pipeline",
+   "Account Management Plan"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q065"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does OBC stand for?",
+  "correct": "Onboarding Champion",
+  "wrong": [
+   "Order Batch Control",
+   "Office Billing Contact",
+   "Online Booking Calendar"
+  ],
+  "explanation": "See also: Setup Champion.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q066"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does STF stand for in partials?",
+  "correct": "Straight-to-finish",
+  "wrong": [
+   "Scan to Fabrication",
+   "Standard Turnaround Fee",
+   "Staged Tray Fit"
+  ],
+  "explanation": "Used to note that the try-in is skipped.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q067"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "easy",
+  "question": "What does RFD stand for?",
+  "correct": "Ready for Design",
+  "wrong": [
+   "Rush for Delivery",
+   "Review Finished Design",
+   "Remake for Dentist"
+  ],
+  "explanation": "A case status before design begins.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q068"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does RFF stand for?",
+  "correct": "Ready for Fabrication",
+  "wrong": [
+   "Refab for Free",
+   "Required Fit Form",
+   "Return for Fix"
+  ],
+  "explanation": "A case status before fabrication.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q069"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does IR stand for?",
+  "correct": "Internal Remake",
+  "wrong": [
+   "Inventory Report",
+   "Intraoral Review",
+   "Implant Restoration"
+  ],
+  "explanation": "Referenced alongside kickbacks.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF) - Common Terms",
+  "id": "q070"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does PRR stand for?",
+  "correct": "Peer Refab Review",
+  "wrong": [
+   "Product Release Readiness",
+   "Practice Retention Rate",
+   "Prep Review Report"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q071"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does CTS measure?",
+  "correct": "Cost to Serve",
+  "wrong": [
+   "Crown Turnaround Speed",
+   "Case Tracking Status",
+   "Clinical Training Score"
+  ],
+  "explanation": "Cost a company spends to service customers.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q072"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does C+R stand for?",
+  "correct": "Cancel and resubmit",
+  "wrong": [
+   "Check and Review",
+   "Crown plus Restoration",
+   "Credit and Refund"
+  ],
+  "explanation": "A workflow for customers and CX to self-service order changes.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q073"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does NTS stand for?",
+  "correct": "New Training Shipment",
+  "wrong": [
+   "Next Ticket Status",
+   "National Territory Sales",
+   "Night guard Tray Set"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q074"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does EPD stand for?",
+  "correct": "Engineering, Product & Design",
+  "wrong": [
+   "Executive Planning Division",
+   "Equipment, Parts & Delivery",
+   "Education, People & Development"
+  ],
+  "explanation": "The team that builds Dandy's software.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q075"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does PFL stand for?",
+  "correct": "Planning, Fulfillment & Logistics",
+  "wrong": [
+   "Product Fit Level",
+   "Practice Finance Ledger",
+   "Plan, Fabricate, Launch"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q076"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does JBS stand for?",
+  "correct": "Job Breakdown Sheet",
+  "wrong": [
+   "Joint Bite Study",
+   "Just Between Shifts",
+   "Job Booking System"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q077"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does KOC stand for?",
+  "correct": "Kick Off Call",
+  "wrong": [
+   "Key Operations Center",
+   "Knowledge Of Crowns",
+   "Kit Order Confirmation"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q078"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does TTFR stand for?",
+  "correct": "Time to First Response",
+  "wrong": [
+   "Total Tooth Fabrication Rate",
+   "Ticket Transfer Flow Rate",
+   "Training Time For Reps"
+  ],
+  "explanation": "Support responsiveness metric.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q079"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does TTR stand for?",
+  "correct": "Time to Resolution",
+  "wrong": [
+   "Time to Ramp",
+   "Tooth Treatment Review",
+   "Total Tray Return"
+  ],
+  "explanation": "Support resolution metric.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q080"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "TTI (Team Ticket Interactions) is usually measured how?",
+  "correct": "As a % of total interactions with customers",
+  "wrong": [
+   "In hours per ticket",
+   "In dollars per ticket",
+   "As a count per day"
+  ],
+  "explanation": "Per the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q081"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does OOS stand for?",
+  "correct": "Out of Stock",
+  "wrong": [
+   "Out of Spec",
+   "Order Operations Specialist",
+   "Operations Support Staff"
+  ],
+  "explanation": "Not to be confused with OOps (Order Ops).",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q082"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does OOps stand for?",
+  "correct": "Order Ops",
+  "wrong": [
+   "Operations Out-of-Policy",
+   "Oral Operations",
+   "Overnight Operations"
+  ],
+  "explanation": "The Order Operations team.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q083"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does BPO stand for at Dandy?",
+  "correct": "Business Process Organization",
+  "wrong": [
+   "Best Practices Office",
+   "Batch Production Order",
+   "Build Plan Override"
+  ],
+  "explanation": "It covers offshoring management.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q084"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What do SF and SFDC stand for?",
+  "correct": "Salesforce",
+  "wrong": [
+   "Scan Fabrication Dashboard",
+   "Sales Funnel Data Cube",
+   "Smile Forecast"
+  ],
+  "explanation": "Both abbreviate Salesforce.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q085"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "easy",
+  "question": "What does ELT stand for?",
+  "correct": "Executive Leadership Team",
+  "wrong": [
+   "Employee Learning Track",
+   "Early Launch Team",
+   "Engineering Lead Table"
+  ],
+  "explanation": "It can also mean Extended Leadership Team; see also SLT.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q086"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does SLP stand for?",
+  "correct": "Single location practices",
+  "wrong": [
+   "Standard lab process",
+   "Scan level planning",
+   "Service line partner"
+  ],
+  "explanation": "The counterpart to MLP (multi-location practices).",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q087"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "easy",
+  "question": "What does DSO stand for?",
+  "correct": "Dental Support (or Service) Organization",
+  "wrong": [
+   "Digital Scanning Office",
+   "Dentist Staffing Option",
+   "Dental Supply Order"
+  ],
+  "explanation": "A group that supports multiple dental practices.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q088"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does AE stand for (not to be confused with Account Manager)?",
+  "correct": "Account Executive",
+  "wrong": [
+   "Aligner Engineer",
+   "Accounting Entry",
+   "Area Estimator"
+  ],
+  "explanation": "AE and AM are different roles.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q089"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does BDR stand for?",
+  "correct": "Business Development Representative",
+  "wrong": [
+   "Bite Design Review",
+   "Batch Delivery Report",
+   "Brand Digital Relations"
+  ],
+  "explanation": "A sales role.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q090"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does PSR stand for?",
+  "correct": "Partner Service Representative",
+  "wrong": [
+   "Product Support Rep",
+   "Practice Success Rate",
+   "Prep Scan Review"
+  ],
+  "explanation": "An internal Dandy user.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q091"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does STS stand for?",
+  "correct": "Sales and Training Specialist",
+  "wrong": [
+   "Scan to Surface",
+   "Standard Turnaround Schedule",
+   "Support Team Supervisor"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q092"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does SA stand for?",
+  "correct": "Standard Adherence",
+  "wrong": [
+   "Scan Accuracy",
+   "Service Agreement",
+   "Support Analyst"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q093"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does CXIT stand for?",
+  "correct": "Customer Experience IT",
+  "wrong": [
+   "Crown eXperience Integration Team",
+   "Clinical eXpert IT",
+   "Cloud Exchange Infrastructure Team"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q094"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does NPI stand for at Dandy?",
+  "correct": "New Product Introduction",
+  "wrong": [
+   "Net Promoter Index",
+   "National Provider Identifier",
+   "New Patient Intake"
+  ],
+  "explanation": "Taking a product from idea through R&D to launch.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q095"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does OEE stand for?",
+  "correct": "Overall Equipment Effectiveness",
+  "wrong": [
+   "Order Execution Efficiency",
+   "Operational Expense Estimate",
+   "Output Error Evaluation"
+  ],
+  "explanation": "A manufacturing metric.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q096"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "UDI is required for customs on international orders. What does it stand for?",
+  "correct": "Unique device identification",
+  "wrong": [
+   "Universal Dental ID",
+   "Unified Delivery Index",
+   "Unit Dispatch Invoice"
+  ],
+  "explanation": "Configured with GS1 and Benchside product configuration.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q097"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "hard",
+  "question": "What does MEA stand for?",
+  "correct": "Middle East-Africa",
+  "wrong": [
+   "Manufacturing Equipment Audit",
+   "Monthly Executive Agenda",
+   "Marketing Engagement Analysis"
+  ],
+  "explanation": "A region.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q098"
+ },
+ {
+  "category": "Dandy Acronyms",
+  "difficulty": "medium",
+  "question": "What does PiB stand for?",
+  "correct": "Planning in Browser",
+  "wrong": [
+   "Production in Batches",
+   "Portal in Beta",
+   "Print in Bulk"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q099"
+ },
+ {
+  "category": "Teams & Workflows",
+  "difficulty": "easy",
+  "question": "At Dandy, a 'ramped' practice has how many lifetime orders?",
+  "correct": "50+",
+  "wrong": [
+   "10+",
+   "25+",
+   "100+"
+  ],
+  "explanation": "The glossary defines ramped as 50+ lifetime orders.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF) - Common Terms",
+  "id": "q100"
+ },
+ {
+  "category": "Teams & Workflows",
+  "difficulty": "medium",
+  "question": "What is a 'kickback' at Dandy?",
+  "correct": "An order item returned to a previous workflow step for correction",
+  "wrong": [
+   "A bonus paid to top designers",
+   "A practice referral reward",
+   "A shipment returned by the carrier"
+  ],
+  "explanation": "It means the item failed informal QC.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF) - Common Terms",
+  "id": "q101"
+ },
+ {
+  "category": "Teams & Workflows",
+  "difficulty": "medium",
+  "question": "What does a 'Setup Champion' do?",
+  "correct": "Completes practice portal onboarding for a practice",
+  "wrong": [
+   "Designs complex bridges",
+   "Leads the manufacturing floor",
+   "Runs the weekly business review"
+  ],
+  "explanation": "Practice staff who complete portal onboarding.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF) - Common Terms",
+  "id": "q102"
+ },
+ {
+  "category": "Teams & Workflows",
+  "difficulty": "medium",
+  "question": "P1 and A1 are design levels. What do they do?",
+  "correct": "Assign cases to qualified designers",
+  "wrong": [
+   "Rank practices by revenue",
+   "Schedule shipments",
+   "Label scanner firmware versions"
+  ],
+  "explanation": "As levels go up, unit counts and complexity rise.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q103"
+ },
+ {
+  "category": "Teams & Workflows",
+  "difficulty": "medium",
+  "question": "In design level 'A1', what does the 'A' stand for?",
+  "correct": "Anterior",
+  "wrong": [
+   "Aligner",
+   "Abutment",
+   "Adhesive"
+  ],
+  "explanation": "A1 = Anterior Level 1; P1 = Posterior Level 1.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q104"
+ },
+ {
+  "category": "Teams & Workflows",
+  "difficulty": "medium",
+  "question": "In scanning, what does 'scan stitching' mean?",
+  "correct": "Compositing hundreds of micro-scans into a full scan",
+  "wrong": [
+   "Sewing together fabric trays",
+   "Merging two practices' accounts",
+   "Printing a scan on a crown"
+  ],
+  "explanation": "In design it can also mean manually compositing multiple scans.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF) - Common Terms",
+  "id": "q105"
+ },
+ {
+  "category": "Teams & Workflows",
+  "difficulty": "medium",
+  "question": "What is 'bite alignment'?",
+  "correct": "Aligning a bite scan to the prep and antagonist scans",
+  "wrong": [
+   "Adjusting a patient's jaw by hand",
+   "Matching crown shade to teeth",
+   "Aligning two practices' orders"
+  ],
+  "explanation": "Per the glossary's common terms.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF) - Common Terms",
+  "id": "q106"
+ },
+ {
+  "category": "Business Lingo",
+  "difficulty": "easy",
+  "question": "What does OKR stand for?",
+  "correct": "Objectives and Key Results",
+  "wrong": [
+   "Operations and Key Reports",
+   "Order Kickback Rate",
+   "Objectives for Knowledge Retention"
+  ],
+  "explanation": "A goal-setting framework.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q107"
+ },
+ {
+  "category": "Business Lingo",
+  "difficulty": "medium",
+  "question": "What does MECE stand for?",
+  "correct": "Mutually Exclusive, Collectively Exhaustive",
+  "wrong": [
+   "Measured Evenly, Completely Explained",
+   "Mostly Efficient, Clearly Executed",
+   "Managed, Evaluated, Controlled, Enhanced"
+  ],
+  "explanation": "A structured-thinking principle.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q108"
+ },
+ {
+  "category": "Business Lingo",
+  "difficulty": "easy",
+  "question": "What does WBR stand for?",
+  "correct": "Weekly Business Review",
+  "wrong": [
+   "Weekly Budget Report",
+   "Weekend Backlog Reset",
+   "Work Better Rhythm"
+  ],
+  "explanation": "MBR is the monthly version.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q109"
+ },
+ {
+  "category": "Business Lingo",
+  "difficulty": "easy",
+  "question": "What does EOD stand for?",
+  "correct": "End of Day",
+  "wrong": [
+   "End of Delivery",
+   "Estimated Order Date",
+   "Every Other Day"
+  ],
+  "explanation": "EOW is End of Week.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q110"
+ },
+ {
+  "category": "Business Lingo",
+  "difficulty": "medium",
+  "question": "What does MBO stand for?",
+  "correct": "Management by Objectives",
+  "wrong": [
+   "Monthly Budget Outlook",
+   "Manufacturing Batch Order",
+   "Marketing by Opportunity"
+  ],
+  "explanation": "A management framework.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q111"
+ },
+ {
+  "category": "Business Lingo",
+  "difficulty": "medium",
+  "question": "What does ARPP stand for?",
+  "correct": "Average Revenue Per Practice",
+  "wrong": [
+   "Annual Refab Planning Process",
+   "Account Renewal Pricing Plan",
+   "Average Return Per Product"
+  ],
+  "explanation": "A revenue metric.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q112"
+ },
+ {
+  "category": "Business Lingo",
+  "difficulty": "medium",
+  "question": "What does CAC stand for?",
+  "correct": "Customer Acquisition Cost",
+  "wrong": [
+   "Clinical Assessment Code",
+   "Crown And Cap",
+   "Case Approval Committee"
+  ],
+  "explanation": "A GTM metric.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q113"
+ },
+ {
+  "category": "Business Lingo",
+  "difficulty": "medium",
+  "question": "What does GTM stand for?",
+  "correct": "Go To Market",
+  "wrong": [
+   "Great Team Meeting",
+   "Guided Tooth Movement",
+   "Global Trade Management"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q114"
+ },
+ {
+  "category": "Business Lingo",
+  "difficulty": "medium",
+  "question": "What does SLA stand for?",
+  "correct": "Service Level Agreement",
+  "wrong": [
+   "Scan Level Assessment",
+   "Standard Lab Allowance",
+   "Support Lead Approval"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q115"
+ },
+ {
+  "category": "Business Lingo",
+  "difficulty": "easy",
+  "question": "What does SOP stand for?",
+  "correct": "Standard Operating Procedure",
+  "wrong": [
+   "Scan Order Process",
+   "Support Operations Plan",
+   "Senior Ops Partner"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q116"
+ },
+ {
+  "category": "Business Lingo",
+  "difficulty": "medium",
+  "question": "QA and QC both appear in the glossary. What does QC stand for?",
+  "correct": "Quality Control",
+  "wrong": [
+   "Quick Check",
+   "Quantity Count",
+   "Queue Control"
+  ],
+  "explanation": "QA is Quality Assurance.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q117"
+ },
+ {
+  "category": "Business Lingo",
+  "difficulty": "medium",
+  "question": "What does CSAT stand for?",
+  "correct": "Customer Satisfaction",
+  "wrong": [
+   "Customer Support Action Team",
+   "Clinical Scan Accuracy Test",
+   "Case Status And Tracking"
+  ],
+  "explanation": "A customer sentiment metric.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q118"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "easy",
+  "question": "In tooth-surface notation, what does 'D' stand for?",
+  "correct": "Distal",
+  "wrong": [
+   "Dorsal",
+   "Dental",
+   "Deep"
+  ],
+  "explanation": "Distal faces away from the midline.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q119"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "easy",
+  "question": "A surface labeled 'BL' combines which two surfaces?",
+  "correct": "Buccal and Lingual",
+  "wrong": [
+   "Bite and Lip",
+   "Bottom and Left",
+   "Buccal and Labial"
+  ],
+  "explanation": "B = Buccal, L = Lingual.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q120"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "easy",
+  "question": "What does 'O' stand for in tooth-surface notation?",
+  "correct": "Occlusal",
+  "wrong": [
+   "Oral",
+   "Outer",
+   "Open"
+  ],
+  "explanation": "The chewing surface.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q121"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "medium",
+  "question": "What does 'I' stand for in tooth-surface notation?",
+  "correct": "Incisal",
+  "wrong": [
+   "Interior",
+   "Inferior",
+   "Implant"
+  ],
+  "explanation": "The cutting edge of front teeth.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q122"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "medium",
+  "question": "FPD is another name for which restoration?",
+  "correct": "A bridge",
+  "wrong": [
+   "A night guard",
+   "A denture adhesive",
+   "A crown only"
+  ],
+  "explanation": "FPD = Fixed Partial Denture, AKA bridge.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q123"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "medium",
+  "question": "What does FCZ stand for?",
+  "correct": "Full Contour Zirconia",
+  "wrong": [
+   "Fully Cast Zirconium",
+   "Final Crown Zone",
+   "Fabricated Ceramic Zirconia"
+  ],
+  "explanation": "A monolithic zirconia crown.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q124"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "medium",
+  "question": "What does PFM stand for?",
+  "correct": "Porcelain Fused to Metal",
+  "wrong": [
+   "Precision Fit Margin",
+   "Partial Fixed Mold",
+   "Porcelain Finished Material"
+  ],
+  "explanation": "A classic crown type.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q125"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "hard",
+  "question": "What does FCC stand for in dental terms?",
+  "correct": "Full Cast Crown",
+  "wrong": [
+   "Full Ceramic Cap",
+   "Fixed Crown Casting",
+   "Fabricated Crown Core"
+  ],
+  "explanation": "A metal crown.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q126"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "hard",
+  "question": "What does VDO stand for?",
+  "correct": "Vertical Dimension of Occlusion",
+  "wrong": [
+   "Variable Digital Output",
+   "Verified Design Order",
+   "Vertical Denture Opening"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q127"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "hard",
+  "question": "What does POI stand for in dental design?",
+  "correct": "Path of Insertion",
+  "wrong": [
+   "Point of Interest",
+   "Prep Over Impression",
+   "Placement of Implant"
+  ],
+  "explanation": "The direction a restoration seats.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q128"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "hard",
+  "question": "What does HOC stand for?",
+  "correct": "Height of contour",
+  "wrong": [
+   "Hold on Crown",
+   "Hygiene Oral Care",
+   "Heat of Cure"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q129"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "hard",
+  "question": "What does TOM stand for?",
+  "correct": "Tissue Over Margin",
+  "wrong": [
+   "Tray Of Molds",
+   "Time On Mill",
+   "Tooth Outline Map"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q130"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "hard",
+  "question": "What does CUP stand for?",
+  "correct": "Crown under Partial",
+  "wrong": [
+   "Custom Upper Prosthesis",
+   "Cap Under Plate",
+   "Crown Under Pontic"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q131"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "hard",
+  "question": "What does TTP stand for in partials?",
+  "correct": "Temporary Treatment Partial",
+  "wrong": [
+   "Tooth Tracking Protocol",
+   "Total Turnaround Period",
+   "Try-in Test Piece"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q132"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "medium",
+  "question": "What does SB stand for in implant cases?",
+  "correct": "Scan Body",
+  "wrong": [
+   "Soft Bite",
+   "Shade Book",
+   "Standard Bridge"
+  ],
+  "explanation": "Used to capture implant position.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q133"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "medium",
+  "question": "NTI is a type of what?",
+  "correct": "A mouthguard that prevents clenching",
+  "wrong": [
+   "A zirconia block",
+   "A scanner tip",
+   "A denture adhesive"
+  ],
+  "explanation": "NTI = Nociceptive Trigeminal Inhibitor.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q134"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "medium",
+  "question": "SRP is also known as what?",
+  "correct": "Deep cleaning",
+  "wrong": [
+   "Whitening",
+   "Root canal",
+   "Crown prep"
+  ],
+  "explanation": "SRP = Scaling and Root Planing, a procedure to treat gum disease.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q135"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "medium",
+  "question": "What does FLD stand for?",
+  "correct": "Full Lower Denture",
+  "wrong": [
+   "Fixed Lower Dentition",
+   "Final Lab Drawing",
+   "First Lower Digital"
+  ],
+  "explanation": "FUD is Full Upper Denture.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q136"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "medium",
+  "question": "What does NG stand for in a dental order?",
+  "correct": "Night guard",
+  "wrong": [
+   "Next Generation",
+   "No Gap",
+   "New Grind"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q137"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "easy",
+  "question": "What does RDH stand for?",
+  "correct": "Registered Dental Hygienist",
+  "wrong": [
+   "Regional Dental Head",
+   "Restorative Design Hub",
+   "Registered Denture Holder"
+  ],
+  "explanation": "RDA is Registered Dental Assistant.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q138"
+ },
+ {
+  "category": "Dental Terms",
+  "difficulty": "medium",
+  "question": "What does CDT stand for?",
+  "correct": "Certified Dental Technician",
+  "wrong": [
+   "Computer Dental Tool",
+   "Crown Design Technique",
+   "Clinical Denture Trainer"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "q139"
+ }
+]

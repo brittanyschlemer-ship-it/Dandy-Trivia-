@@ -1,6 +1,6 @@
 # Dandy Trivia
 
-Live multiplayer trivia for a remote team. One host creates a game, shares a link, everyone joins with just a name, and the server runs the 15-second rounds, scoring and leaderboard.
+Live multiplayer trivia for a remote team, with two games on one site: **Team Edition** (Dandy acronyms, products, culture) and **Lead Edition** (tech shorthand, what leads learn walking the floor, the training playbook). One host creates a game, shares a link, everyone joins with just a name, and the server runs the 15-second rounds, scoring and leaderboard.
 
 **Status: built and tested locally, not deployed.** I had no hosting access, so there is no public URL yet. Follow "Get a public link" below; it takes about 5 minutes.
 
@@ -31,10 +31,10 @@ WebSockets must be allowed (they are on all the platforms above). Use `https`; t
 
 ## Hosting a game
 
-1. Open the site, enter your name, leave "I'll play too" ticked (or untick it to just run the show), pick a length, **Create game**.
+1. Open the site, enter your name, pick the **Game** (Lead Edition or Team Edition; you can switch in the lobby), leave "I'll play too" ticked (or untick it to just run the show), pick a length, **Create game**.
 2. In the lobby, **Copy link** and paste it into your meeting chat. Open *Game settings* to choose categories, difficulty and length.
 3. Watch players appear. When everyone's in, press **Start game** in the bar at the bottom.
-4. Each question runs 15 seconds. When the clock hits zero everyone sees the answer, an explanation and the leaderboard. Press **Next question** when ready (it unlocks after 5 seconds). **End game** finishes early.
+4. Each question runs 15 seconds, and the bar shows live progress ("8 of 10 players answered"). When the clock hits zero everyone sees the answer, an explanation and the leaderboard. **If every active player has answered**, the host sees "Everyone has answered — ready to continue!" and the **Next question** button unlocks. Clicking it closes the question for everyone at once, scores it and shows the results, without waiting for the clock. If even one active player hasn't answered, the button stays locked and the round runs to zero. After the results, press **Next question** again to start the next round (it unlocks after 5 seconds so people can read the answer). **End game** finishes early.
 5. On the final screen, **Play again** keeps the same players and resets scores; **New game** starts fresh.
 
 Notes: your host powers live in a secret token stored in *your browser*. Refreshing is fine. Don't clear site data, and don't open the link as a player in the same browser profile (it will see you as the host); use a private window instead. If you lose the token you lose host control of that game, so just start another.
@@ -52,6 +52,7 @@ A single Node server (`server.js`: Express + `ws`) owns all game state. Browsers
 | Only the host can start/advance/end/restart/kick/change settings | Every host message must carry the secret host token; the server compares its SHA-256 hash in constant time. Tokens are never sent to other players. |
 | 15-second countdown | Server sets `deadline = start + 15000ms` and fires the reveal itself. Clients get the deadline and align to the server clock with ping/pong offset sampling, so all screens count down together. Client timers only draw the ring. |
 | Late answers rejected | `answer` is refused if server time ≥ deadline or phase ≠ question. |
+| Early advance | The server refuses the host's early "next" unless every **active** player has answered. Active = playing this question (mid-round joiners are spectators) and connected, or disconnected less than 8s ago (so a refresh doesn't change who the host waits on; `ACTIVE_GRACE_MS`). With zero active players it is never allowed. Players cannot trigger it. Once closed, later answers are rejected and scoring runs once, from server arrival times. |
 | One answer per player | First submission locks; later ones are refused with `duplicate`. |
 | Correct answer hidden until reveal | The view builder omits `correctIndex`, explanation and source until phase = reveal. Option order is shuffled server-side per game. |
 | Scoring and "first" | Server timestamps each accepted answer (`Date.now()` on arrival, plus arrival sequence for ties). First correct = 1,000, other correct = 500, else 0. Computed once at reveal. |
@@ -77,7 +78,7 @@ Tokens are stored only as SHA-256 hashes.
 
 ## Question bank
 
-`data/questions.json`: **139 questions**, 28 easy / 78 medium / 33 hard, across Dandy Acronyms, Dental Terms, Teams & Workflows, Business Lingo, Company Facts, Products & Digital Dentistry, Culture & Fun. Each has one correct answer, three wrong options, an explanation, category, difficulty and a source. Options are shuffled at game start so the answer isn't always in the same slot.
+`data/questions.json`: **139 questions**, 28 easy / 78 medium / 33 hard, across Dandy Acronyms, Dental Terms, Teams & Workflows, Business Lingo, Company Facts, Products & Digital Dentistry, Culture & Fun. Each has one correct answer, three wrong options, an explanation, category, difficulty and a source. Options are shuffled at game start so the answer isn't always in the same slot. Every time a game starts (including **Play again**) the server draws a fresh random set from the questions matching your categories/difficulty, never repeating one inside a game. A room avoids questions it already played until the pool is used up, and never replays the previous game's exact order when another order exists. The sequence is fixed on the server when the game starts, so refreshes and reconnects never change it. (The draw happens at Start, not at Restart, because the host can still change settings in the lobby.)
 
 - Review sheet with every answer and source: `docs/QUESTION_BANK.md` (⚠ marks questions resting on Slack or a headline-only/secondary source; worth a 2-minute skim).
 - To edit: change `scripts/build_questions.py` and run `npm run build:questions`, or edit the JSON directly (keep the same fields). Restart the server to load changes.
@@ -88,6 +89,24 @@ Tokens are stored only as SHA-256 hashes.
 - **meetdandy.com:** direct page fetches were blocked (Cloudflare 403), so I did **not** browse the site. I used web-search excerpts of its pages and press releases (home, /labs, /careers, newsroom) plus Dandy's LinkedIn. Facts like "Lehi UT / Carrollton TX", "2-appointment dentures", "2 million people" and press-release figures are as of those excerpts and could have changed; the leadership questions are worded "in the April 2025 release" for that reason. The Fusion denture line and Yeshiva partnership come from news headlines only.
 - I left out anything I could only find in a single third-party article (founders, funding rounds, acquisitions).
 
+## Lead Edition question bank
+
+`data/questions-lead.json`: **125 questions** (20 easy / 86 medium / 19 hard): Tech Shorthand (40: TL;DR, "let's take this offline", ICYMI, LGTM, MFA, LLM and more), Time Off Policy (21), Walk the Floor (18), Scorecard & Metrics (17), Launch Playbook (12), Tools & Systems (9), Training Terms (8). Review sheet with every answer and source: `docs/LEAD_QUESTION_BANK.md`. Edit via `scripts/build_lead_questions.py` + `npm run build:lead`.
+
+Where it came from:
+- **Slack (read-only, with your permission):** #team-training-leads and #training-team-ops (private), plus public channels. I also ran a keyword search of your DMs, limited to floor-walk topics. DM content is paraphrased as general principles and never attributed.
+- **Training Defined Time Off Policy** (Google Doc, last edited Sep 2026): source for the PTO/STO/Capacity Day questions.
+- **Tech shorthand:** standard workplace/tech meanings, with Slack checked to confirm the ones your team actually uses (TLDR, "take this offline", ICYMI, etc.).
+- **Dandy glossary:** for terms like RFC, DRI, TC, STS, KOC.
+
+Privacy choices: no people's names, no individual performance, pay, hiring, reporting-line or schedule details. Scorecard and QA findings are used only as team-level patterns.
+
+Please check before using with a group:
+- **I could not open The Bite** (its site isn't reachable from my environment). What I know about it comes from how it's described in Slack, so the Bite questions are about what it is and how it's used, not page contents.
+- **Policies and processes change.** The time-off questions follow the Sep 2026 doc. The older 2024 "PTO Guidelines" doc has different rules (per-day caps) and was not used. Holiday-form details are 2026-specific.
+- **Slack-derived questions reflect conversations as of Oct 2026** (virtual-first follow-ups, split-launch standard, scorecard competencies, 15-order model). Confirm each is still current practice.
+- A few Slack figures are included as team-level snapshots (for example equipment delays touching roughly 2% of launches). Remove them if you'd rather not share numbers.
+
 ## Tests
 
 ```bash
@@ -96,7 +115,7 @@ npm run test:fast   # same without the real-time round
 npm run test:ui     # runs the real client code in jsdom against the live server
 npm run test:load   # 60 simultaneous players
 ```
-Last run: server integration 64/64 (57 fast + 7 real-timer), UI 30/30 (repeated 5x clean), load check passed. They cover: shared link joining, live lobby, duplicate names, host-only start/advance (forged tokens rejected), identical server deadline for all clients, 15s timing (reveal at 14.99s; reveal spread <150ms across clients), answer locking, late-answer rejection, no answer leakage before reveal, 1,000/500/0 scoring, first-correct ordering, leaderboard, reconnect and host-refresh recovery, host-offline handling, late joiners, tie-break ordering, end early, play again, restart persistence, and the create/join/question/reveal/final screens driven through real DOM events.
+Last run: server integration 99/99 (including the real 15s round, early advance rules, active-player edge cases, reshuffling and edition switching), UI 34/34 (repeated 5x clean), load check passed. They cover: shared link joining, live lobby, duplicate names, host-only start/advance (forged tokens rejected), identical server deadline for all clients, 15s timing (reveal at 14.99s; reveal spread <150ms across clients), answer locking, late-answer rejection, no answer leakage before reveal, 1,000/500/0 scoring, first-correct ordering, leaderboard, reconnect and host-refresh recovery, host-offline handling, late joiners, tie-break ordering, end early, play again, restart persistence, and the create/join/question/reveal/final screens driven through real DOM events.
 
 ### Limitations (please read)
 - **Not deployed.** No public URL exists until you do the deploy step above.

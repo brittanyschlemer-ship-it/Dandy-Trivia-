@@ -24,13 +24,24 @@ const MIN_REVEAL_MS = Number(process.env.MIN_REVEAL_MS || 5000);       // spec: 
 const AUTO_ADVANCE_MS = Number(process.env.AUTO_ADVANCE_MS || 10000);  // optional auto-advance after reveal
 const FIRST_POINTS = 1000;
 const OTHER_POINTS = 500;
+const ACTIVE_GRACE_MS = Number(process.env.ACTIVE_GRACE_MS || 8000);   // a dropped player still counts as active this long (covers refreshes)
 const MAX_PLAYERS = Number(process.env.MAX_PLAYERS || 150);
 const MAX_GAMES = 500;
 const GAME_TTL_MS = 24 * 60 * 60 * 1000;
 const NAME_MAX = 20;
 
-const BANK = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'questions.json'), 'utf8'));
-const CATEGORIES = [...new Set(BANK.map(q => q.category))].sort();
+// Editions: same engine, different question banks. Add another by adding a file and an entry here.
+const EDITIONS = {
+  team: { name: 'Team Edition', file: 'questions.json', blurb: 'Dandy acronyms, products and culture for everyone' },
+  lead: { name: 'Lead Edition', file: 'questions-lead.json', blurb: 'Tech shorthand, what leads learn walking the floor, and the training playbook' }
+};
+const BANKS = {};
+for (const [key, e] of Object.entries(EDITIONS)) {
+  try { BANKS[key] = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', e.file), 'utf8')); }
+  catch (err) { console.error(`edition "${key}" unavailable:`, err.message); delete EDITIONS[key]; }
+}
+const bankOf = ed => BANKS[ed] || BANKS.team;
+const categoriesOf = ed => [...new Set(bankOf(ed).map(q => q.category))].sort();
 const DIFFICULTIES = ['easy', 'medium', 'hard'];
 
 // ---------- helpers ----------
@@ -76,17 +87,18 @@ const rt = code => {
 };
 
 function clampSettings(input, prev) {
-  const s = Object.assign({ numQuestions: 15, categories: [], difficulties: [], autoAdvance: false }, prev || {});
+  const s = Object.assign({ edition: 'team', numQuestions: 15, categories: [], difficulties: [], autoAdvance: false }, prev || {});
   if (input && typeof input === 'object') {
+    if (typeof input.edition === 'string' && BANKS[input.edition] && input.edition !== s.edition) { s.edition = input.edition; s.categories = []; }
     if (Number.isFinite(Number(input.numQuestions))) s.numQuestions = Math.max(5, Math.min(50, Math.floor(Number(input.numQuestions))));
-    if (Array.isArray(input.categories)) s.categories = input.categories.filter(c => CATEGORIES.includes(c));
+    if (Array.isArray(input.categories)) s.categories = input.categories.filter(c => categoriesOf(s.edition).includes(c));
     if (Array.isArray(input.difficulties)) s.difficulties = input.difficulties.filter(d => DIFFICULTIES.includes(d));
     if (typeof input.autoAdvance === 'boolean') s.autoAdvance = input.autoAdvance;
   }
   return s;
 }
 function pool(settings) {
-  return BANK.filter(q =>
+  return bankOf(settings.edition).filter(q =>
     (!settings.categories.length || settings.categories.includes(q.category)) &&
     (!settings.difficulties.length || settings.difficulties.includes(q.difficulty)));
 }
@@ -128,19 +140,39 @@ function standings(g) {
 }
 
 // ---------- game flow ----------
-function pickQuestions(settings) {
-  const chosen = shuffle(pool(settings)).slice(0, settings.numQuestions);
-  return chosen.map(q => {
+function pickQuestions(settings, usedIds, lastOrder) {
+  // Fresh shuffle every game. Questions this room has already played are skipped until the pool runs dry.
+  const used = new Set(usedIds || []);
+  const all = pool(settings);
+  let chosen = shuffle(all.filter(q => !used.has(q.id))).slice(0, settings.numQuestions);
+  let nextUsed;
+  if (chosen.length < settings.numQuestions) {
+    // not enough unseen questions: top up from the rest and start a new rotation
+    const taken = new Set(chosen.map(q => q.id));
+    const topUp = shuffle(all.filter(q => !taken.has(q.id))).slice(0, settings.numQuestions - chosen.length);
+    chosen = shuffle(chosen.concat(topUp));
+    nextUsed = chosen.map(q => q.id);
+  } else {
+    nextUsed = [...used, ...chosen.map(q => q.id)];
+  }
+  // never replay the exact order of the previous game when another order exists
+  const same = ids => lastOrder && ids.length === lastOrder.length && ids.every((id, i) => id === lastOrder[i]);
+  for (let i = 0; i < 25 && chosen.length > 1 && same(chosen.map(q => q.id)); i++) chosen = shuffle(chosen);
+  const questions = chosen.map(q => {
     const options = shuffle([q.correct, ...q.wrong]);
     return {
       id: q.id, category: q.category, difficulty: q.difficulty, text: q.question,
       options, correctIndex: options.indexOf(q.correct), explanation: q.explanation, source: q.source
     };
   });
+  return { questions, usedIds: nextUsed, order: chosen.map(q => q.id) };
 }
 
 function startGame(g) {
-  g.questions = pickQuestions(g.settings);
+  const pick = pickQuestions(g.settings, g.usedIds, g.lastOrder);
+  g.questions = pick.questions;   // fixed for the whole game: never reshuffled on refresh/reconnect
+  g.usedIds = pick.usedIds;
+  g.lastOrder = pick.order;
   for (const p of Object.values(g.players)) { p.score = 0; p.correct = 0; p.totalMs = 0; p.answeredCount = 0; p.joinedAtQ = -1; }
   g.qIndex = -1;
   beginNextQuestion(g);
@@ -173,6 +205,7 @@ function armDeadline(g) {
 }
 
 function doReveal(g) {
+  clearTimeout(rt(g.code).timer);
   const q = g.questions[g.qIndex];
   const correct = Object.entries(g.answers)
     .filter(([, a]) => a.choice === q.correctIndex)
@@ -251,6 +284,19 @@ function hostOnline(g) {
   for (const ws of rt(g.code).conns) if (ws.meta.isHost) return true;
   return false;
 }
+// "Active" = takes part in this question (not a spectator who joined mid-round) AND is connected,
+// or dropped less than ACTIVE_GRACE_MS ago (so a refresh doesn't change who the host is waiting on).
+function activePlayers(g) {
+  if (g.phase !== 'question') return [];
+  const now = Date.now();
+  return Object.values(g.players).filter(p => eligible(g, p) &&
+    (isOnline(g, p.id) || (p.offlineAt && now - p.offlineAt < ACTIVE_GRACE_MS)));
+}
+function allAnswered(g) {
+  const act = activePlayers(g);
+  if (act.length < 1) return false;               // nobody active (or can't tell): never allow early advance
+  return act.every(p => g.answers[p.id]);
+}
 function eligible(g, p) { return g.phase === 'lobby' || p.joinedAtQ < g.qIndex; }
 
 function viewFor(g, ws) {
@@ -273,10 +319,17 @@ function viewFor(g, ws) {
     qIndex: g.qIndex,
     total: inGame ? g.questions.length : Math.min(g.settings.numQuestions, pool(g.settings).length),
     poolSize: pool(g.settings).length,
+    edition: g.settings.edition,
+    editionName: EDITIONS[g.settings.edition] ? EDITIONS[g.settings.edition].name : 'Team Edition',
+    editions: Object.entries(EDITIONS).map(([key, e]) => ({ key, name: e.name, blurb: e.blurb })),
+    categories: categoriesOf(g.settings.edition),
     question: q ? { index: g.qIndex, text: q.text, options: q.options, category: q.category, difficulty: q.difficulty } : null,
     qMs: QUESTION_MS,
     deadline: g.phase === 'question' ? g.deadline : null,
     answeredCount: g.phase === 'question' || g.phase === 'reveal' ? Object.keys(g.answers).length : 0,
+    allAnswered: allAnswered(g),
+    activeCount: activePlayers(g).length,
+    answeredActive: activePlayers(g).filter(p => g.answers[p.id]).length,
     eligibleCount: inGame ? Object.values(g.players).filter(p => eligible(g, p)).length : 0,
     me: me ? {
       id: me.id, name: me.name,
@@ -352,11 +405,15 @@ function rateLimit(max, windowMs) {
 
 app.get('/api/health', (req, res) => res.json({ ok: true, games: games.size }));
 app.get('/api/meta', (req, res) => {
-  const counts = {};
-  for (const c of CATEGORIES) counts[c] = BANK.filter(q => q.category === c).length;
-  const diffs = {};
-  for (const d of DIFFICULTIES) diffs[d] = BANK.filter(q => q.difficulty === d).length;
-  res.json({ categories: counts, difficulties: diffs, total: BANK.length, questionSeconds: QUESTION_MS / 1000 });
+  const editions = {};
+  for (const [key, e] of Object.entries(EDITIONS)) {
+    const bank = bankOf(key), counts = {}, diffs = {};
+    for (const c of categoriesOf(key)) counts[c] = bank.filter(q => q.category === c).length;
+    for (const d of DIFFICULTIES) diffs[d] = bank.filter(q => q.difficulty === d).length;
+    editions[key] = { name: e.name, blurb: e.blurb, total: bank.length, categories: counts, difficulties: diffs };
+  }
+  const t = editions.team || Object.values(editions)[0];
+  res.json({ editions, categories: t.categories, difficulties: t.difficulties, total: t.total, questionSeconds: QUESTION_MS / 1000 });
 });
 app.get('/api/games/:code', (req, res) => {
   const g = games.get(String(req.params.code).toUpperCase());
@@ -416,7 +473,15 @@ function detach(ws) {
   if (r) r.conns.delete(ws);
   const g = games.get(code);
   ws.meta.code = null;
-  if (g) queueBroadcast(g, 150);
+  if (g) {
+    const p = ws.meta.playerId && g.players[ws.meta.playerId];
+    if (p && !isOnline(g, p.id)) {
+      p.offlineAt = Date.now();
+      // re-evaluate "who is active" once the grace period ends
+      setTimeout(() => { if (games.get(code) === g) queueBroadcast(g, 50); }, ACTIVE_GRACE_MS + 100);
+    }
+    queueBroadcast(g, 150);
+  }
 }
 
 wss.on('connection', ws => {
@@ -514,6 +579,10 @@ function hostAction(g, ws, m) {
       if (pool(g.settings).length < 5) return send(ws, { t: 'error', error: 'Not enough questions match those filters.' });
       if (Object.keys(g.players).length < 1) return send(ws, { t: 'error', error: 'Wait for at least one player to join.' });
       return startGame(g);
+    case 'reveal':
+      if (g.phase !== 'question') return;
+      if (!allAnswered(g)) return send(ws, { t: 'error', code: 'not_all', error: 'Still waiting on players who haven\'t answered.' });
+      return doReveal(g);
     case 'next':
       if (g.phase !== 'reveal') return;
       if (Date.now() < g.revealAt + MIN_REVEAL_MS) return send(ws, { t: 'error', code: 'too_soon', error: 'Give players a moment with the answer.' });
@@ -563,6 +632,6 @@ process.on('SIGINT', shutdown);
 
 if (require.main === module) {
   loadState();
-  server.listen(PORT, () => console.log(`Dandy Trivia listening on :${PORT} (question time ${QUESTION_MS}ms, ${BANK.length} questions)`));
+  server.listen(PORT, () => console.log(`Dandy Trivia listening on :${PORT} (question time ${QUESTION_MS}ms, editions: ${Object.entries(BANKS).map(([k, b]) => k + '=' + b.length).join(', ')})`));
 }
 module.exports = { server, games, loadState, saveNow };

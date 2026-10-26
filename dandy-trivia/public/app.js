@@ -165,6 +165,9 @@ function screenHome() {
   mount('home', () => {
     const name = h('input', { type: 'text', id: 'hname', maxlength: 20, autocomplete: 'nickname', placeholder: 'Your name' });
     const plays = h('input', { type: 'checkbox', checked: true, id: 'plays' });
+    const ed = h('select', { id: 'edition' },
+      h('option', { value: 'lead' }, 'Lead Edition: tech shorthand, floor-walk learnings, training playbook'),
+      h('option', { value: 'team' }, 'Team Edition: Dandy acronyms, products and culture'));
     const count = h('select', { id: 'qcount' }, [10, 15, 20, 30].map(n => h('option', { value: n, selected: n === 15 }, `${n} questions`)));
     const auto = h('input', { type: 'checkbox', id: 'auto' });
     const err = h('p', { class: 'err', role: 'alert' });
@@ -178,7 +181,7 @@ function screenHome() {
       btn.disabled = true;
       try {
         const r = await fetch('/api/games', { method: 'POST', headers: { 'content-type': 'application/json' },
-          body: JSON.stringify({ hostName: name.value, hostPlays: plays.checked, settings: { numQuestions: Number(count.value), autoAdvance: auto.checked } }) });
+          body: JSON.stringify({ hostName: name.value, hostPlays: plays.checked, settings: { edition: ed.value, numQuestions: Number(count.value), autoAdvance: auto.checked } }) });
         const j = await r.json();
         if (!r.ok) throw new Error(j.error || 'Could not create the game.');
         ls.set(hKey(j.code), j.hostToken);
@@ -196,9 +199,10 @@ function screenHome() {
         h('h2', { text: 'Host a game' }),
         h('label', { class: 'field', for: 'hname' }, h('span', { text: 'Your name' }), name),
         h('label', { class: 'toggle' }, plays, 'I\'ll play too'),
+        h('label', { class: 'field', for: 'edition' }, h('span', { text: 'Game' }), ed),
         h('label', { class: 'field', for: 'qcount' }, h('span', { text: 'Length' }), count),
         h('label', { class: 'toggle' }, auto, 'Advance automatically after each answer'),
-        h('p', { class: 'muted small', text: 'You can pick categories and difficulty in the lobby.' }),
+        h('p', { class: 'muted small', text: 'You can change the game, categories and difficulty in the lobby.' }),
         err, btn),
       h('div', { class: 'card flat stack' },
         h('h3', { text: 'Joining a game?' }),
@@ -261,7 +265,7 @@ function screenLobby(st) {
     u.wait = h('div', { class: 'waiting', role: 'status' });
     const link = location.origin + '/g/' + st.code;
     const parts = [
-      h('div', { class: 'row between' }, brand(), h('span', { class: 'pill', text: 'Code ' + st.code })),
+      h('div', { class: 'row between' }, brand(), h('span', { class: 'row', style: 'gap:8px' }, u.edPill = h('span', { class: 'pill' }), h('span', { class: 'pill', text: 'Code ' + st.code }))),
       h('div', null, h('h1', { text: st.isHost ? 'Your game is open' : "You're in!" })),
       u.wait
     ];
@@ -280,6 +284,7 @@ function screenLobby(st) {
     $app.append(h('div', { class: 'wrap stack' }, parts));
   });
   const u = S.ui;
+  u.edPill.textContent = st.editionName;
   u.count.textContent = st.players.length;
   u.countLabel.textContent = st.players.length === 1 ? 'player joined' : 'players joined';
   playerChips(st, u.list, st.me && st.me.id);
@@ -290,11 +295,12 @@ function screenLobby(st) {
 }
 
 function settingsPanel(st, u) {
-  const CATS = ['Dandy Acronyms', 'Dental Terms', 'Teams & Workflows', 'Business Lingo', 'Company Facts', 'Products & Digital Dentistry', 'Culture & Fun'];
   const DIFFS = ['easy', 'medium', 'hard'];
   const sel = { categories: new Set(st.settings.categories), difficulties: new Set(st.settings.difficulties) };
-  let timer;
-  const push = () => { clearTimeout(timer); timer = setTimeout(() => hostSend('settings', { settings: { numQuestions: Number(num.value), categories: [...sel.categories], difficulties: [...sel.difficulties], autoAdvance: auto.checked } }), 250); };
+  let edition = st.edition, timer, pending = false;
+  const push = () => { pending = true; clearTimeout(timer); timer = setTimeout(() => { pending = false; hostSend('settings', { settings: { edition: edSel.value, numQuestions: Number(num.value), categories: [...sel.categories], difficulties: [...sel.difficulties], autoAdvance: auto.checked } }); }, 250); };
+  const edSel = h('select', { id: 'edsel', onchange: () => { sel.categories.clear(); push(); } },
+    st.editions.map(e => h('option', { value: e.key, selected: e.key === st.edition }, `${e.name}: ${e.blurb}`)));
   const num = h('select', { id: 'nq', onchange: push }, [5, 10, 15, 20, 25, 30, 40, 50].map(n => h('option', { value: n }, `${n} questions`)));
   const auto = h('input', { type: 'checkbox', onchange: push });
   const chip = (set, value, label) => {
@@ -304,18 +310,25 @@ function settingsPanel(st, u) {
     c.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flip(); } });
     return c;
   };
+  const catBox = h('div', { class: 'opts' });
+  const buildCats = cats => catBox.replaceChildren(...cats.map(c => chip(sel.categories, c, c)));
+  buildCats(st.categories);
   const info = h('p', { class: 'muted small', role: 'status' });
   u.syncSettings = s => {
+    if (pending) return;   // don't clobber a change the host just made but hasn't sent yet
+    if (s.edition !== edition) { edition = s.edition; sel.categories = new Set(s.settings.categories); buildCats(s.categories); }
+    if (document.activeElement !== edSel) edSel.value = s.edition;
     if (document.activeElement !== num) num.value = String(s.settings.numQuestions);
     if (!num.value) num.value = String(s.settings.numQuestions);
     auto.checked = s.settings.autoAdvance;
     info.textContent = `${s.poolSize} questions match your filters. This game will use ${s.total}.`;
   };
   u.syncSettings(st);
-  return h('details', { class: 'card settings' }, h('summary', null, 'Game settings'),
+  return h('details', { class: 'card settings', open: true }, h('summary', null, 'Game settings'),
     h('div', { class: 'stack', style: 'margin-top:8px' },
+      h('label', { class: 'field', for: 'edsel' }, h('span', { text: 'Game' }), edSel),
       h('label', { class: 'field', for: 'nq' }, h('span', { text: 'Length' }), num),
-      h('div', null, h('strong', { text: 'Categories' }), h('p', { class: 'muted small', text: 'None selected means all categories.' }), h('div', { class: 'opts' }, CATS.map(c => chip(sel.categories, c, c)))),
+      h('div', null, h('strong', { text: 'Categories' }), h('p', { class: 'muted small', text: 'None selected means all categories.' }), catBox),
       h('div', null, h('strong', { text: 'Difficulty' }), h('div', { class: 'opts' }, DIFFS.map(d => chip(sel.difficulties, d, d[0].toUpperCase() + d.slice(1))))),
       h('label', { class: 'toggle' }, auto, 'Advance automatically after each answer'),
       info));
@@ -342,6 +355,7 @@ function screenQuestion(st) {
     svg.append(track, bar);
     u.timer = h('div', { class: 'timer', role: 'timer', 'aria-label': 'Time remaining' }, svg, u.timeNum);
     u.status = h('p', { class: 'status', role: 'status' });
+    u.ready = h('p', { class: 'readynote', role: 'status' });
     u.progress = h('i');
     u.progLabel = h('span', { class: 'muted small' });
     u.btns = q.options.map((opt, i) => {
@@ -357,6 +371,7 @@ function screenQuestion(st) {
       h('h2', { class: 'question-text', text: q.text }),
       h('div', { class: 'answers', role: 'group', 'aria-label': 'Answer choices' }, u.btns),
       u.status,
+      u.ready,
       h('div', null, h('div', { class: 'progress', 'aria-hidden': 'true' }, u.progress), u.progLabel)));
     say(`Question ${q.index + 1}. ${q.text}`);
     tickTimer(st);
@@ -377,8 +392,10 @@ function screenQuestion(st) {
     : !st.me.eligible ? "You joined mid-round, so you're watching this one. You're in from the next question."
     : mine != null ? '✓ Answer locked in. Results appear when the clock hits zero.'
     : timeUp ? "Time's up!" : 'Pick one. You get a single answer.';
-  u.progress.style.width = st.eligibleCount ? Math.round(100 * st.answeredCount / st.eligibleCount) + '%' : '0%';
-  u.progLabel.textContent = `${st.answeredCount} of ${st.eligibleCount} answered`;
+  u.progress.style.width = st.activeCount ? Math.round(100 * st.answeredActive / st.activeCount) + '%' : '0%';
+  u.progLabel.textContent = `${st.answeredActive} of ${st.activeCount} players answered`;
+  u.ready.textContent = st.isHost && st.allAnswered ? '✓ Everyone has answered — ready to continue!' : '';
+  u.ready.style.display = u.ready.textContent ? '' : 'none';
 }
 function choose(i) {
   const u = S.ui;
@@ -405,7 +422,7 @@ function tickTimer(st0) {
     if (rem === 0 && !u.timeUpShown) { u.timeUpShown = true; if (S.st) screenQuestion(S.st); }
     rafId = requestAnimationFrame(frame);
   };
-  cancelAnimationFrame(rafId); rafId = requestAnimationFrame(frame);
+  cancelAnimationFrame(rafId); frame();   // draw immediately, then keep going each frame
 }
 
 // ----- reveal -----
@@ -555,7 +572,8 @@ function renderHostBar(st) {
       bar.start = h('button', { class: 'btn', type: 'button', onclick: () => hostSend('start') }, 'Start game');
       actions.append(bar.start);
     } else if (st.phase === 'question') {
-      actions.append(endBtn());
+      bar.reveal = h('button', { class: 'btn', type: 'button', onclick: () => hostSend('reveal') }, 'Next question');
+      actions.append(bar.reveal, endBtn());
     } else if (st.phase === 'reveal') {
       bar.next = h('button', { class: 'btn', type: 'button', onclick: () => hostSend('next') });
       actions.append(bar.next);
@@ -569,7 +587,11 @@ function renderHostBar(st) {
   }
   const lbl = bar.label;
   if (st.phase === 'lobby') { lbl.replaceChildren('Host controls', h('small', { text: `${st.players.length} in the lobby · ${st.total} questions` })); bar.start.disabled = st.players.length < 1; }
-  else if (st.phase === 'question') lbl.replaceChildren(`Question ${st.question.index + 1} of ${st.total}`, h('small', { text: `${st.answeredCount} of ${st.eligibleCount} answered` }));
+  else if (st.phase === 'question') {
+    lbl.replaceChildren(`Question ${st.question.index + 1} of ${st.total}`, h('small', { text: st.allAnswered ? 'Everyone has answered — ready to continue!' : `${st.answeredActive} of ${st.activeCount} players answered` }));
+    bar.reveal.disabled = !st.allAnswered;
+    bar.reveal.classList.toggle('ready', !!st.allAnswered);
+  }
   else if (st.phase === 'reveal') { lbl.replaceChildren('Host controls', h('small', { text: st.settings.autoAdvance ? 'Auto-advance is on' : 'Continue when everyone has read the answer' })); updateNext(); }
   else lbl.replaceChildren('Game over', h('small', { text: 'Play again with the same players, or start fresh.' }));
 }

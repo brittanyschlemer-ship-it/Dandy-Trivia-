@@ -12,7 +12,8 @@ const WebSocket = require('ws');
 
 const ROOT = path.join(__dirname, '..');
 const BANK = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'questions.json'), 'utf8'));
-const byText = Object.fromEntries(BANK.map(q => [q.question, q]));
+const LEAD = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'questions-lead.json'), 'utf8'));
+const byText = Object.fromEntries(BANK.concat(LEAD).map(q => [q.question, q]));
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 let passed = 0, failed = 0;
@@ -346,15 +347,225 @@ async function testHostControls() {
   } finally { await srv.stop(); }
 }
 
+
+// ---------- test 5: early reveal + reshuffle ----------
+async function testEarlyRevealAndShuffle() {
+  console.log('\n[5] Host can move on once everyone has answered; questions reshuffle with no repeats');
+  const srv = await startServer({ QUESTION_MS: 15000, MIN_REVEAL_MS: 100 });
+  try {
+    const g = await createGame(srv, { hostPlays: false, settings: { numQuestions: 5 } });
+    const host = new Client(srv, 'host'); await host.connect(); host.hello(g.code, { hostToken: g.hostToken });
+    await host.waitFor(m => m.t === 'state');
+    const A = (await join(srv, g.code, 'Ann')).c, B = (await join(srv, g.code, 'Bob')).c;
+    const play = async (firstRoundChecks) => {
+      const since = Date.now(), texts = [];
+      host.send({ t: 'host', action: 'start', hostToken: g.hostToken });
+      for (let i = 0; i < 5; i++) {
+        if (i > 0) host.send({ t: 'host', action: 'next', hostToken: g.hostToken });
+        const st = await A.waitFor(m => m.t === 'state' && m.phase === 'question' && m.qIndex === i && m._at >= since, 5000, 'question ' + i);
+        texts.push(st.question.text);
+        const ci = correctIdx(st);
+        if (firstRoundChecks && i === 0) {
+          const t0 = Date.now();
+          host.send({ t: 'host', action: 'reveal', hostToken: g.hostToken });
+          const e = await host.waitFor(m => m.t === 'error' && m.code === 'not_all' && m._at >= t0, 2000, 'not_all');
+          ok(!!e, 'host cannot skip ahead while nobody has answered');
+          A.send({ t: 'answer', q: 0, choice: ci });
+          await sleep(300);
+          host.send({ t: 'host', action: 'reveal', hostToken: g.hostToken });
+          const e2 = await host.waitFor(m => m.t === 'error' && m.code === 'not_all' && m._at >= t0 + 300, 2000, 'not_all 2').catch(() => null);
+          ok(!!e2 && host.state.phase === 'question', 'host cannot skip ahead while someone is still thinking');
+          ok(host.state.allAnswered === false, 'host view reports not everyone has answered');
+          A.send({ t: 'host', action: 'reveal', hostToken: 'forged' });
+          B.send({ t: 'answer', q: 0, choice: (ci + 1) % 4 });
+          await host.waitFor(m => m.t === 'state' && m.allAnswered === true && m._at >= t0, 2000, 'allAnswered');
+          ok(true, 'host view flags that everyone has answered');
+          const tr = Date.now();
+          host.send({ t: 'host', action: 'reveal', hostToken: g.hostToken });
+          const rv = await A.waitFor(m => m.t === 'state' && m.phase === 'reveal' && m.qIndex === 0 && m._at >= tr, 2000, 'early reveal');
+          ok(Date.now() - t0 < 5000, `answer revealed early (${Date.now() - t0}ms into a 15000ms round)`);
+          const myId = A.playerId;
+          ok(rv.reveal.results[myId].points === 1000 && rv.reveal.results[B.playerId].points === 0, 'scoring is unchanged after an early reveal');
+        } else {
+          A.send({ t: 'answer', q: i, choice: ci }); await sleep(20); B.send({ t: 'answer', q: i, choice: ci });
+          await host.waitFor(m => m.t === 'state' && m.allAnswered === true && m.qIndex === i && m._at >= since, 3000, 'allAnswered ' + i);
+          host.send({ t: 'host', action: 'reveal', hostToken: g.hostToken });
+          await A.waitFor(m => m.t === 'state' && m.phase === 'reveal' && m.qIndex === i && m._at >= since, 3000, 'reveal ' + i);
+        }
+        await sleep(150);
+      }
+      host.send({ t: 'host', action: 'next', hostToken: g.hostToken });
+      await A.waitFor(m => m.t === 'state' && m.phase === 'final' && m._at >= since, 3000, 'final');
+      return texts;
+    };
+    const game1 = await play(true);
+    host.send({ t: 'host', action: 'restart', hostToken: g.hostToken });
+    await sleep(300);
+    const game2 = await play(false);
+    ok(game1.length === 5 && game2.length === 5, 'both games ran 5 questions');
+    ok(game1.every(t => !game2.includes(t)), 'restarted game uses a fresh shuffle with no repeats from the previous game');
+    [host, A, B].forEach(c => c.close());
+  } finally { await srv.stop(); }
+}
+
+// ---------- test 6: spec section 7 scenarios ----------
+async function testSpec7() {
+  console.log('\n[6] Early advance rules (active players) and order shuffling');
+  const srv = await startServer({ QUESTION_MS: 3000, MIN_REVEAL_MS: 100, ACTIVE_GRACE_MS: 700 });
+  try {
+    const mkHost = async g => { const h = new Client(srv, 'host'); await h.connect(); h.hello(g.code, { hostToken: g.hostToken }); await h.waitFor(m => m.t === 'state'); return h; };
+    const hs = (h, g, action) => h.send({ t: 'host', action, hostToken: g.hostToken });
+    const since = () => Date.now();
+
+    // A) one player waits for the timer: host cannot skip, round ends at the deadline
+    let g = await createGame(srv, { hostPlays: false, settings: { numQuestions: 5 } });
+    let host = await mkHost(g);
+    let A = (await join(srv, g.code, 'Ann')).c, B = (await join(srv, g.code, 'Bob')).c;
+    let t0 = since(); hs(host, g, 'start');
+    let st = await A.waitQuestion(0); const ci = correctIdx(st);
+    A.send({ t: 'answer', q: 0, choice: ci });
+    await host.waitFor(m => m.t === 'state' && m.answeredActive === 1 && m._at >= t0, 2000, 'count 1');
+    ok(host.state.activeCount === 2 && host.state.answeredActive === 1 && host.state.allAnswered === false, 'host sees live count: "1 of 2 players answered", early advance not allowed');
+    hs(host, g, 'reveal');
+    ok(!!(await host.waitFor(m => m.t === 'error' && m.code === 'not_all' && m._at >= t0, 2000, 'refused')), 'server refuses early advance while one active player has not answered');
+    const rv = await A.waitFor(m => m.t === 'state' && m.phase === 'reveal' && m.qIndex === 0 && m._at >= t0, 5000, 'timer reveal');
+    ok(rv._at - t0 >= 2900 && rv._at - t0 < 3700, `with a holdout, the question runs to the countdown and ends normally (${rv._at - t0}ms)`);
+    ok(rv.reveal.results[A.playerId].points === 1000 && !rv.reveal.results[B.playerId], 'normal-round scoring unchanged');
+    hs(host, g, 'end'); await sleep(100);
+
+    // B) spectator (late joiner) does not block; early advance works; spectators cannot trigger it
+    hs(host, g, 'restart'); await sleep(150);
+    t0 = since(); hs(host, g, 'start'); st = await A.waitFor(m => m.t === 'state' && m.phase === 'question' && m._at >= t0, 3000, 'q');
+    const spec = (await join(srv, g.code, 'Spec')).c;
+    A.send({ t: 'answer', q: 0, choice: correctIdx(st) }); B.send({ t: 'answer', q: 0, choice: correctIdx(st) });
+    await host.waitFor(m => m.t === 'state' && m.allAnswered === true && m._at >= t0, 2000, 'all answered');
+    ok(host.state.activeCount === 2, 'a mid-round joiner (spectator) is not counted as active and does not block the host');
+    spec.send({ t: 'host', action: 'reveal' }); A.send({ t: 'host', action: 'reveal', hostToken: 'x' });
+    await sleep(200);
+    ok(host.state.phase === 'question', 'players and spectators cannot trigger early advance');
+    const tr = since(); hs(host, g, 'reveal');
+    const early = await A.waitFor(m => m.t === 'state' && m.phase === 'reveal' && m._at >= tr, 1500, 'early reveal');
+    ok(early._at - t0 < 2500, `host ended the round early (${early._at - t0}ms into a 3000ms round); all clients got the reveal`);
+    ok(!!(await B.waitFor(m => m.t === 'state' && m.phase === 'reveal' && m._at >= tr, 1500, 'B reveal')), 'every player is moved to the reveal together');
+    A.send({ t: 'answer', q: 0, choice: 0 });
+    ok((await A.waitFor(m => m.t === 'rejected' && m._at >= tr, 1500, 'closed')).reason === 'closed', 'submissions after an early close are rejected');
+    ok(early.reveal.results[A.playerId].points === 1000 && early.reveal.results[B.playerId].points === 500, 'early-reveal scoring: first correct 1000, other correct 500');
+    hs(host, g, 'end'); await sleep(100);
+
+    // C) dropped player: still blocks inside the grace window, stops blocking after it
+    hs(host, g, 'restart'); await sleep(150);
+    host.send({ t: 'host', action: 'kick', playerId: spec.playerId, hostToken: g.hostToken }); await sleep(150);
+    const C = (await join(srv, g.code, 'Cal')).c;
+    t0 = since(); hs(host, g, 'start'); st = await A.waitFor(m => m.t === 'state' && m.phase === 'question' && m._at >= t0, 3000, 'q');
+    C.close();
+    A.send({ t: 'answer', q: 0, choice: correctIdx(st) }); B.send({ t: 'answer', q: 0, choice: correctIdx(st) });
+    await sleep(250);
+    ok(host.state.allAnswered === false && host.state.activeCount === 3, 'a player who just dropped (e.g. refreshing) still counts as active for a short grace period');
+    await host.waitFor(m => m.t === 'state' && m.allAnswered === true && m._at >= t0, 2500, 'grace over');
+    ok(host.state.activeCount === 2, 'after the grace period a disconnected player no longer blocks the host');
+    hs(host, g, 'end'); await sleep(100);
+
+    // D) zero active players: never allow early advance
+    hs(host, g, 'restart'); await sleep(150);
+    const solo = await createGame(srv, { hostPlays: false, settings: { numQuestions: 5 } });
+    const h2 = await mkHost(solo); const S = (await join(srv, solo.code, 'Solo')).c;
+    t0 = since(); hs(h2, solo, 'start'); st = await S.waitFor(m => m.t === 'state' && m.phase === 'question' && m._at >= t0, 3000, 'q');
+    S.send({ t: 'answer', q: 0, choice: correctIdx(st) }); await sleep(100); S.close();
+    await sleep(1000);
+    ok(h2.state.activeCount === 0 && h2.state.allAnswered === false, 'with no active players the host button stays disabled');
+    hs(h2, solo, 'reveal');
+    ok(!!(await h2.waitFor(m => m.t === 'error' && m.code === 'not_all' && m._at >= t0 + 1000, 2000, 'refused')), 'server refuses early advance when there are no active players');
+    h2.close();
+
+    // E) shuffle: same filter, pool exactly as large as the game: order must still differ, no repeats within a game, no reshuffle on reconnect
+    const fg = await createGame(srv, { hostPlays: false, settings: { numQuestions: 7, categories: ['Culture & Fun'] } });
+    const fh = await mkHost(fg); const P = (await join(srv, fg.code, 'Pat')).c;
+    const play = async () => {
+      const t = since(), texts = [];
+      hs(fh, fg, 'start');
+      for (let i = 0; i < 7; i++) {
+        if (i > 0) hs(fh, fg, 'next');
+        const q = await P.waitFor(m => m.t === 'state' && m.phase === 'question' && m.qIndex === i && m._at >= t, 4000, 'q' + i);
+        texts.push(q.question.text);
+        if (i === 2) {                                    // reconnect mid-game: same question, same sequence
+          const P2 = new Client(srv, 'Pat2'); await P2.connect(); P2.hello(fg.code, { playerToken: P.playerToken });
+          const again = await P2.waitFor(m => m.t === 'state', 2000, 'state');
+          ok(again.question.text === q.question.text && again.qIndex === 2, 'reconnecting mid-game shows the same question (no reshuffle)');
+          P2.close();
+        }
+        P.send({ t: 'answer', q: i, choice: correctIdx(q) });
+        await fh.waitFor(m => m.t === 'state' && m.allAnswered === true && m.qIndex === i && m._at >= t, 2000, 'all');
+        hs(fh, fg, 'reveal');
+        await P.waitFor(m => m.t === 'state' && m.phase === 'reveal' && m.qIndex === i && m._at >= t, 2000, 'rev');
+        await sleep(130);
+      }
+      hs(fh, fg, 'next'); await P.waitFor(m => m.t === 'state' && m.phase === 'final' && m._at >= t, 2000, 'final');
+      return texts;
+    };
+    const g1 = await play();
+    hs(fh, fg, 'restart'); await sleep(200);
+    const g2 = await play();
+    ok(new Set(g1).size === 7 && new Set(g2).size === 7, 'no question repeats within a game');
+    ok(g1.every(q => BANK.find(b => b.question === q).category === 'Culture & Fun'), 'category filter is respected when shuffling');
+    ok(JSON.stringify(g1) !== JSON.stringify(g2) && [...g1].sort().join() === [...g2].sort().join(), 'new game uses the same eligible questions in a different order than the previous game');
+    [host, A, B, spec, fh, P].forEach(c => c.close());
+  } finally { await srv.stop(); }
+}
+
+// ---------- test 7: editions ----------
+async function testEditions() {
+  console.log('\n[7] Editions (Team vs Lead question banks on one server)');
+  const srv = await startServer({ QUESTION_MS: 3000, MIN_REVEAL_MS: 100 });
+  try {
+    const meta = await (await fetch(srv.base + '/api/meta')).json();
+    ok(meta.editions.team && meta.editions.lead && meta.editions.lead.total >= 75, `server offers both editions (lead bank has ${meta.editions.lead.total} questions)`);
+    const mkHost = async g => { const h = new Client(srv, 'host'); await h.connect(); h.hello(g.code, { hostToken: g.hostToken }); const first = await h.waitFor(m => m.t === 'state'); return { h, first }; };
+
+    const d = await createGame(srv, { hostPlays: false, settings: { numQuestions: 5 } });
+    const dh = await mkHost(d);
+    ok(dh.first.edition === 'team', 'a game created without an edition defaults to Team Edition');
+
+    const g = await createGame(srv, { hostPlays: false, settings: { edition: 'lead', numQuestions: 7, categories: ['Time Off Policy'] } });
+    const { h: host, first } = await mkHost(g);
+    ok(first.edition === 'lead' && first.editionName === 'Lead Edition' && first.categories.includes('Walk the Floor') && !first.categories.includes('Dandy Acronyms'), 'lead game exposes the lead categories only');
+    const P = (await join(srv, g.code, 'Lee')).c;
+    const t0 = Date.now(); host.send({ t: 'host', action: 'start', hostToken: g.hostToken });
+    const q = await P.waitFor(m => m.t === 'state' && m.phase === 'question' && m._at >= t0, 3000, 'question');
+    const src = LEAD.find(b => b.question === q.question.text);
+    ok(!!src && src.category === 'Time Off Policy' && q.question.category === 'Time Off Policy', 'lead game draws from the lead bank and honours its category filter');
+    host.send({ t: 'host', action: 'end', hostToken: g.hostToken }); await sleep(100);
+    host.send({ t: 'host', action: 'restart', hostToken: g.hostToken }); await sleep(150);
+
+    host.send({ t: 'host', action: 'settings', hostToken: g.hostToken, settings: { edition: 'bogus' } }); await sleep(150);
+    ok(host.state.edition === 'lead' && host.state.settings.categories.length === 1, 'an unknown edition is ignored');
+    host.send({ t: 'host', action: 'settings', hostToken: g.hostToken, settings: { edition: 'team', numQuestions: 10 } });
+    await host.waitFor(m => m.t === 'state' && m.edition === 'team', 2000, 'switch');
+    ok(host.state.settings.categories.length === 0 && host.state.categories.includes('Dandy Acronyms') && host.state.poolSize === meta.editions.team.total, 'host can switch edition in the lobby; category filters reset');
+    const t1 = Date.now(); host.send({ t: 'host', action: 'start', hostToken: g.hostToken });
+    const q2 = await P.waitFor(m => m.t === 'state' && m.phase === 'question' && m._at >= t1, 3000, 'team question');
+    ok(BANK.some(b => b.question === q2.question.text), 'after switching, questions come from the team bank');
+    P.send({ t: 'player-only-edition', edition: 'lead' }); P.send({ t: 'host', action: 'settings', settings: { edition: 'lead' } });
+    await sleep(150);
+    ok(host.state.edition === 'team', 'players cannot change the edition');
+    [host, P, dh.h].forEach(c => c.close());
+  } finally { await srv.stop(); }
+}
+
 (async () => {
   const fast = process.argv.includes('--fast');
   const only = (process.argv.find(a => a.startsWith('--only=')) || '').slice(7);
   try {
     if (only === 'timer') await testRealTimer();
+    else if (only === 'early') await testEarlyRevealAndShuffle();
+    else if (only === 'spec7') await testSpec7();
+    else if (only === 'editions') await testEditions();
     else {
       await testFullGame();
       await testHostControls();
       await testPersistence();
+      await testEarlyRevealAndShuffle();
+      await testSpec7();
+      await testEditions();
       if (!fast) await testRealTimer();
     }
   } catch (e) { failed++; console.log('  FAIL (exception)', e.message); }

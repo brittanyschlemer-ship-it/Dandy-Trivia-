@@ -1,0 +1,1752 @@
+[
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "What does TL;DR stand for?",
+  "correct": "Too long; didn't read",
+  "wrong": [
+   "Time left; deadline reached",
+   "Talk later; do review",
+   "Task list; daily report"
+  ],
+  "explanation": "It introduces a short summary, and people use it in Dandy tickets and threads all the time.",
+  "source": "Common workplace/tech usage; seen in use in Slack #cx-product-support, #epd-cad-support",
+  "id": "l001"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "A teammate starts an escalation with \"TLDR:\". What are they giving you?",
+  "correct": "A short summary up front",
+  "wrong": [
+   "A deadline",
+   "A list of attendees",
+   "A request for approval"
+  ],
+  "explanation": "TLDR leads the one-or-two-line version of a longer message.",
+  "source": "Common workplace/tech usage; seen in use in Slack #cx-product-support",
+  "id": "l002"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "Someone says \"let's take this offline.\" What do they mean?",
+  "correct": "Continue the discussion outside this meeting or thread",
+  "wrong": [
+   "Pause until the internet is back",
+   "Cancel the project",
+   "Hand it to legal"
+  ],
+  "explanation": "Typically a DM, a 1:1 or a quick call.",
+  "source": "Common workplace/tech usage; seen in use in Slack #service-delivery-wbr, #cx-product-support",
+  "id": "l003"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "Why do people say \"let's take this offline\" in a big meeting?",
+  "correct": "To avoid derailing the group and sort details with the people involved",
+  "wrong": [
+   "Because the meeting is being recorded",
+   "Because the topic is confidential from HR",
+   "Because the Wi-Fi is bad"
+  ],
+  "explanation": "It keeps the room on the agenda while the detail gets handled separately.",
+  "source": "Common workplace/tech usage",
+  "id": "l004"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "What does ICYMI mean?",
+  "correct": "In case you missed it",
+  "wrong": [
+   "I can't make it in",
+   "It's critical, my inbox",
+   "In case you may inquire"
+  ],
+  "explanation": "Used to resurface something important.",
+  "source": "Common workplace/tech usage; seen in use in Slack #epd-ai, #temp-aio-1-1-relaunch-working-group",
+  "id": "l005"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "In a code or doc review, LGTM means what?",
+  "correct": "Looks good to me",
+  "wrong": [
+   "Let's get the meeting",
+   "Late, going to miss",
+   "Leave given to manager"
+  ],
+  "explanation": "A sign-off, common in pull-request reviews.",
+  "source": "Common workplace/tech usage",
+  "id": "l006"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "What does WIP stand for?",
+  "correct": "Work in progress",
+  "wrong": [
+   "Weekly impact plan",
+   "Waiting in pipeline",
+   "Wrap it up"
+  ],
+  "explanation": "Not finished yet, but shared for visibility.",
+  "source": "Common workplace/tech usage",
+  "id": "l007"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "What does OOO mean in a calendar or status?",
+  "correct": "Out of office",
+  "wrong": [
+   "Out of order",
+   "On our own",
+   "Only one option"
+  ],
+  "explanation": "Don't expect a quick reply.",
+  "source": "Common workplace/tech usage",
+  "id": "l008"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "What does FYI stand for?",
+  "correct": "For your information",
+  "wrong": [
+   "Follow your instincts",
+   "Finish by yesterday, immediately",
+   "From your inbox"
+  ],
+  "explanation": "A heads-up that needs no action.",
+  "source": "Common workplace/tech usage",
+  "id": "l009"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "In engineering, what does PR stand for in \"can you review my PR?\"",
+  "correct": "Pull request",
+  "wrong": [
+   "Product release",
+   "Priority review",
+   "Process rollout"
+  ],
+  "explanation": "A proposed code change awaiting review.",
+  "source": "Common workplace/tech usage; seen in use in Slack #epd-production-management-pr-reviews",
+  "id": "l010"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does NRN mean at the end of a message?",
+  "correct": "No reply needed",
+  "wrong": [
+   "Next review needed",
+   "Not right now",
+   "New resource needed"
+  ],
+  "explanation": "Saves everyone an unnecessary \"thanks!\".",
+  "source": "Common workplace/tech usage",
+  "id": "l011"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does AFAIK stand for?",
+  "correct": "As far as I know",
+  "wrong": [
+   "Always follow all instructions, kindly",
+   "A final answer is known",
+   "Ask for another idea, kindly"
+  ],
+  "explanation": "Signals you're not 100% certain.",
+  "source": "Common workplace/tech usage",
+  "id": "l012"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does IMO stand for?",
+  "correct": "In my opinion",
+  "wrong": [
+   "It must occur",
+   "Immediate move required",
+   "Is more optional"
+  ],
+  "explanation": "Marks a view, not a fact.",
+  "source": "Common workplace/tech usage",
+  "id": "l013"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "What does WFH stand for?",
+  "correct": "Work from home",
+  "wrong": [
+   "Week for help",
+   "Weekly field hours",
+   "Walk the floor, honestly"
+  ],
+  "explanation": "Dandy has a WFH equipment stipend for remote setups.",
+  "source": "Common workplace/tech usage; seen in use in Slack #trainer-onboarding",
+  "id": "l014"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "What does PTO stand for?",
+  "correct": "Paid time off",
+  "wrong": [
+   "Planned task order",
+   "Priority training overview",
+   "Part-time only"
+  ],
+  "explanation": "Time off that is paid.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l015"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "In support and training, what does KB stand for?",
+  "correct": "Knowledge base",
+  "wrong": [
+   "Key benchmark",
+   "Kickback",
+   "Kilobyte batch"
+  ],
+  "explanation": "Where SOPs and help articles live. Trainers were told to re-bookmark links after a KB reorganization.",
+  "source": "Common workplace/tech usage; seen in use in Slack #training-team-ops",
+  "id": "l016"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What is a \"1:1\"?",
+  "correct": "A one-on-one meeting between two people",
+  "wrong": [
+   "A one-to-one ratio of trainers to practices",
+   "A first-order discount",
+   "A single-order launch"
+  ],
+  "explanation": "Leads run regular 1:1s with their trainers.",
+  "source": "Common workplace/tech usage",
+  "id": "l017"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does it mean to do something \"async\"?",
+  "correct": "Without everyone needing to be online at the same time",
+  "wrong": [
+   "Automatically, with no review",
+   "At a slower pace on purpose",
+   "In a meeting with video on"
+  ],
+  "explanation": "A written update instead of a live meeting.",
+  "source": "Common workplace/tech usage; seen in use in Slack #training-team-ops",
+  "id": "l018"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "\"Let's circle back on that\" means what?",
+  "correct": "Return to the topic later",
+  "wrong": [
+   "Start the meeting over",
+   "Cancel the topic",
+   "Repeat the last slide"
+  ],
+  "explanation": "A polite way of parking something.",
+  "source": "Common workplace/tech usage",
+  "id": "l019"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does \"unblock\" mean?",
+  "correct": "Remove whatever is stopping someone's progress",
+  "wrong": [
+   "Reopen a closed ticket",
+   "Approve a purchase",
+   "Restore a deleted file"
+  ],
+  "explanation": "The Lead Project Tracker exists partly to help leads unblock each other.",
+  "source": "Common workplace/tech usage; seen in use in Slack #team-training-leads",
+  "id": "l020"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "If someone says they don't have the \"bandwidth,\" what do they mean?",
+  "correct": "They don't have the capacity for more work",
+  "wrong": [
+   "Their internet is slow",
+   "They need a bigger budget",
+   "They disagree with the plan"
+  ],
+  "explanation": "It's about time and attention, not Wi-Fi.",
+  "source": "Common workplace/tech usage",
+  "id": "l021"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "In the Dandy glossary, an RFC is a...",
+  "correct": "Request for Comment, a proposed project or initiative",
+  "wrong": [
+   "Required for customer",
+   "Refab for credit",
+   "Rapid field check"
+  ],
+  "explanation": "Used to gather feedback before building.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l022"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "In the Dandy glossary, what does DRI stand for?",
+  "correct": "Directly Responsible Individual",
+  "wrong": [
+   "Dentist Request Intake",
+   "Design Review Initiative",
+   "Daily Routine Item"
+  ],
+  "explanation": "The one person ultimately responsible for a decision or project.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l023"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "What does EOD mean?",
+  "correct": "End of day",
+  "wrong": [
+   "End of delivery",
+   "Every other day",
+   "Estimated order date"
+  ],
+  "explanation": "\"Please acknowledge by EOD\" means before the day finishes.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l024"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does EOM mean in a lead metrics review?",
+  "correct": "End of month",
+  "wrong": [
+   "End of meeting",
+   "Estimate of margin",
+   "Every other Monday"
+  ],
+  "explanation": "Leads review last month's numbers at EOM.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l025"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "In a ticket, what is \"ETA?\" usually asking for?",
+  "correct": "An expected completion time",
+  "wrong": [
+   "The next escalation tier",
+   "An exact assignee",
+   "A payment amount"
+  ],
+  "explanation": "The glossary expands ETA as Estimated Time of Arrival.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l026"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does SSO stand for?",
+  "correct": "Single sign-on",
+  "wrong": [
+   "Secure support option",
+   "Standard scanning order",
+   "System status overview"
+  ],
+  "explanation": "One login that works across several tools.",
+  "source": "Common workplace/tech usage",
+  "id": "l027"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does MFA stand for?",
+  "correct": "Multi-factor authentication",
+  "wrong": [
+   "Managed field access",
+   "Maximum file allowance",
+   "Main frame archive"
+  ],
+  "explanation": "A second check beyond a password. It matters given the recent phishing warnings.",
+  "source": "Common workplace/tech usage; seen in use in Slack #always-be-learning",
+  "id": "l028"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does API stand for?",
+  "correct": "Application programming interface",
+  "wrong": [
+   "Automated process indicator",
+   "Account payment integration",
+   "Applied project inventory"
+  ],
+  "explanation": "How one piece of software talks to another.",
+  "source": "Common workplace/tech usage",
+  "id": "l029"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does LLM stand for?",
+  "correct": "Large language model",
+  "wrong": [
+   "Limited license manager",
+   "Lab logistics module",
+   "Long-lead material"
+  ],
+  "explanation": "The kind of AI behind tools like Claude.",
+  "source": "Common workplace/tech usage; seen in use in Slack #epd-ai",
+  "id": "l030"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "DANTE is an in-house ML model. What does ML stand for?",
+  "correct": "Machine learning",
+  "wrong": [
+   "Manual labor",
+   "Material list",
+   "Mesh library"
+  ],
+  "explanation": "DANTE generates crown designs.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l031"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "What does DM stand for in Slack?",
+  "correct": "Direct message",
+  "wrong": [
+   "Daily metric",
+   "Design module",
+   "Delivery manager"
+  ],
+  "explanation": "A private message to one person or a small group.",
+  "source": "Common workplace/tech usage",
+  "id": "l032"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "The Training Newsletter Compliance app is fed with a weekly what kind of file?",
+  "correct": "CSV (comma-separated values)",
+  "wrong": [
+   "PDF",
+   "MP4",
+   "PPTX"
+  ],
+  "explanation": "A CSV is downloaded from The Bite and uploaded each Monday.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l033"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does NPS stand for?",
+  "correct": "Net Promoter Score",
+  "wrong": [
+   "New product spec",
+   "National provider status",
+   "Next practice step"
+  ],
+  "explanation": "A common customer-loyalty metric.",
+  "source": "Common workplace/tech usage",
+  "id": "l034"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "In the handoff channel name \"smb-to-enterprise\", what does SMB stand for?",
+  "correct": "Small and medium-sized business",
+  "wrong": [
+   "Scan-based billing",
+   "Scheduled monthly bundle",
+   "Senior management briefing"
+  ],
+  "explanation": "Practices are routed differently as they grow.",
+  "source": "Common workplace/tech usage; seen in use in Slack #smb-to-enterprise-handoff",
+  "id": "l035"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does MVP mean in product work?",
+  "correct": "Minimum viable product",
+  "wrong": [
+   "Most valuable player",
+   "Maximum volume plan",
+   "Managed vendor process"
+  ],
+  "explanation": "The smallest version worth testing with real users.",
+  "source": "Common workplace/tech usage",
+  "id": "l036"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does POC stand for in tech?",
+  "correct": "Proof of concept",
+  "wrong": [
+   "Point of care",
+   "Process owner check",
+   "Practice order count"
+  ],
+  "explanation": "A small experiment to show something can work.",
+  "source": "Common workplace/tech usage",
+  "id": "l037"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "easy",
+  "question": "In a doc or ticket, \"TBD\" means what?",
+  "correct": "To be determined",
+  "wrong": [
+   "To be delivered",
+   "Training by default",
+   "Task before deadline"
+  ],
+  "explanation": "Not decided yet.",
+  "source": "Common workplace/tech usage",
+  "id": "l038"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "medium",
+  "question": "What does WBR stand for?",
+  "correct": "Weekly Business Review",
+  "wrong": [
+   "Weekly budget report",
+   "Walk-the-floor briefing round",
+   "Work breakdown review"
+  ],
+  "explanation": "Leads prepare their misses for it.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF); Slack #team-training-leads (private channel)",
+  "id": "l039"
+ },
+ {
+  "category": "Tech Shorthand",
+  "difficulty": "hard",
+  "question": "MECE is a way of structuring problems. What does it stand for?",
+  "correct": "Mutually Exclusive, Collectively Exhaustive",
+  "wrong": [
+   "Measured, Evidenced, Clear, Effective",
+   "Managed, Escalated, Closed, Executed",
+   "Most Efficient, Cost-Effective"
+  ],
+  "explanation": "Categories don't overlap and together cover everything.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l040"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "easy",
+  "question": "Which of these is one of Dandy's named drivers?",
+  "correct": "Walk the Floor",
+  "wrong": [
+   "Hit the Quota",
+   "Stay in Your Lane",
+   "Keep It Quiet"
+  ],
+  "explanation": "Walk the Floor sits alongside Move at Dandy Speed, See Tomorrow Clearly, Obsess Over Customers and Win as One.",
+  "source": "Slack #all-dandians / #cheers-around-the-world",
+  "id": "l041"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "easy",
+  "question": "Which Dandy driver is represented by a boot icon?",
+  "correct": "Walk the Floor",
+  "wrong": [
+   "Win as One",
+   "See Tomorrow Clearly",
+   "Move at Dandy Speed"
+  ],
+  "explanation": "The boot emoji is the Walk the Floor icon in Slack.",
+  "source": "Slack #all-dandians / #cheers-around-the-world",
+  "id": "l042"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "medium",
+  "question": "Which Dandy driver is about working fast?",
+  "correct": "Move at Dandy Speed",
+  "wrong": [
+   "Win as One",
+   "Obsess Over Customers",
+   "See Tomorrow Clearly"
+  ],
+  "explanation": "One of the named drivers.",
+  "source": "Slack #all-dandians / #cheers-around-the-world",
+  "id": "l043"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "medium",
+  "question": "Which Dandy driver is about collaborating as a team?",
+  "correct": "Win as One",
+  "wrong": [
+   "Walk the Floor",
+   "Move at Dandy Speed",
+   "See Tomorrow Clearly"
+  ],
+  "explanation": "One of the named drivers.",
+  "source": "Slack #all-dandians / #cheers-around-the-world",
+  "id": "l044"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "medium",
+  "question": "Per a company-wide post, walking the floor means what?",
+  "correct": "Listening to customers, reading every piece of feedback and doing the little things",
+  "wrong": [
+   "Reviewing dashboards from your desk",
+   "Waiting for escalations to arrive",
+   "Handing all customer contact to support"
+  ],
+  "explanation": "It's about getting close to the customer and the work.",
+  "source": "Slack #all-dandians / #cheers-around-the-world",
+  "id": "l045"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "medium",
+  "question": "One teammate \"walks the floor\" on every case she reviews. How?",
+  "correct": "By imagining herself performing each step to fabricate the restoration",
+  "wrong": [
+   "By re-measuring every scan",
+   "By visiting each practice",
+   "By writing a summary for every case"
+  ],
+  "explanation": "She places herself in the steps from seating the patient through fabrication to delivery.",
+  "source": "Slack #all-dandians / #cheers-around-the-world",
+  "id": "l046"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "hard",
+  "question": "A competency is low across a team. What does a lead's floor walk look like?",
+  "correct": "Listen to calls: are they even doing it? If not, find out why, then coach that reason",
+  "wrong": [
+   "Send a team-wide reminder",
+   "Add the competency to a dashboard and wait",
+   "Remove it from the scorecard"
+  ],
+  "explanation": "The floor walk is to investigate the behavior and the blocker, not just the number.",
+  "source": "Slack DMs (paraphrased, unattributed)",
+  "id": "l047"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "medium",
+  "question": "A doctor had just texted a trainer. The lead coached the trainer to call instead. Why?",
+  "correct": "To work through the objection live and get a stronger commitment",
+  "wrong": [
+   "Calls are cheaper than texts",
+   "Texts can't be logged in Salesforce",
+   "Doctors never read texts"
+  ],
+  "explanation": "A call lets you create urgency and lock a clear next step.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l048"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "medium",
+  "question": "In that coaching win, what created urgency with a doctor who would be away for about 12 days?",
+  "correct": "Not wanting to start from scratch again when they returned",
+  "wrong": [
+   "A discount about to expire",
+   "A scanner recall",
+   "The practice's lease ending"
+  ],
+  "explanation": "Acting while training was fresh led to a same-day working session.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l049"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "medium",
+  "question": "What is a \"boomerang\" practice?",
+  "correct": "A practice that previously churned and is working with Dandy again",
+  "wrong": [
+   "A practice that reorders every week",
+   "A practice that returns scanners",
+   "A practice referred by another practice"
+  ],
+  "explanation": "A trainer argued these practices need special care.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l050"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "hard",
+  "question": "A trainer argued boomerang practices need support through at least which order?",
+  "correct": "Order 10",
+  "wrong": [
+   "Order 2",
+   "Order 5",
+   "Order 25"
+  ],
+  "explanation": "It's a rare chance to work with them again.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l051"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "medium",
+  "question": "A trainer argued that customers aren't successful in Month 2 without what?",
+  "correct": "Continued trainer support",
+  "wrong": [
+   "A second scanner",
+   "A pricing change",
+   "A new portal"
+  ],
+  "explanation": "Success past the first 30 days needs ongoing support.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l052"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "medium",
+  "question": "Before committing a staff case in a launch, what should a trainer ask first?",
+  "correct": "Whether there's a live patient in the next 2 business days",
+  "wrong": [
+   "Whether the doctor has CEREC",
+   "How many scanners the office has",
+   "Who will pay for the case"
+  ],
+  "explanation": "Scanning a staff member is the fallback.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l053"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "hard",
+  "question": "In recent QA data, Case Commitment passed more often when a trainer did what?",
+  "correct": "Asked about a live patient in the next 2 business days first",
+  "wrong": [
+   "Skipped the staff scan",
+   "Booked the follow-up by text",
+   "Shortened the launch"
+  ],
+  "explanation": "Launches with a live-patient case inside the window passed far more often.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l054"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "hard",
+  "question": "A lead's analysis found which readiness gap mattered more than equipment delays?",
+  "correct": "Practices not logging in to the portal before launch",
+  "wrong": [
+   "Wrong tip sizes",
+   "Late shipping labels",
+   "Missing training decks"
+  ],
+  "explanation": "Equipment delays touched only a small slice of launches.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l055"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "hard",
+  "question": "Equipment delays touched roughly what share of launches in that analysis?",
+  "correct": "About 2%",
+  "wrong": [
+   "About 20%",
+   "About 40%",
+   "About 60%"
+  ],
+  "explanation": "A small slice, with ramp rates about the same as everyone else.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l056"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "hard",
+  "question": "Trainers said they weren't confident telling which scanners apart?",
+  "correct": "Vision, Trios 3 and Trios 5",
+  "wrong": [
+   "Vision and Chairside",
+   "Trios 3 and Aligner",
+   "DANTE and DDE"
+  ],
+  "explanation": "Calls showed Vision habits carrying over to Trios launches.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l057"
+ },
+ {
+  "category": "Walk the Floor",
+  "difficulty": "hard",
+  "question": "Which Vision habit was stalling Trios 3 launches?",
+  "correct": "Telling the office there's no calibration",
+  "wrong": [
+   "Skipping the bite scan",
+   "Using the wrong shade guide",
+   "Scanning with tips off"
+  ],
+  "explanation": "Trios 3 offices needed calibration, so the launch stalled.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l058"
+ },
+ {
+  "category": "Launch Playbook",
+  "difficulty": "medium",
+  "question": "When a practice needs a follow-up training, what should be offered first?",
+  "correct": "A virtual follow-up",
+  "wrong": [
+   "A field follow-up by the original trainer",
+   "A price credit",
+   "A brand-new launch"
+  ],
+  "explanation": "Field follow-ups are one of the most expensive investments in time and travel.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l059"
+ },
+ {
+  "category": "Launch Playbook",
+  "difficulty": "medium",
+  "question": "Virtual follow-ups for aligners, sleep and implants go first to which team?",
+  "correct": "The STS team",
+  "wrong": [
+   "The CST",
+   "The BDR team",
+   "The PPR team"
+  ],
+  "explanation": "STS = Sales and Training Specialist.",
+  "source": "Slack #team-training-leads (private channel); Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l060"
+ },
+ {
+  "category": "Launch Playbook",
+  "difficulty": "medium",
+  "question": "If virtual isn't a good fit and a doctor truly needs a field follow-up, how is it requested?",
+  "correct": "Through TC Escalations",
+  "wrong": [
+   "Directly on the trainer's own calendar",
+   "By email to the doctor",
+   "By a Slack DM to a random trainer"
+  ],
+  "explanation": "After a clear attempt to reassure the customer virtually.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l061"
+ },
+ {
+  "category": "Launch Playbook",
+  "difficulty": "medium",
+  "question": "Which of these can field trainers no longer do?",
+  "correct": "Assign a follow-up training to themselves",
+  "wrong": [
+   "Offer a virtual follow-up",
+   "Request a TC escalation",
+   "Reassure the customer"
+  ],
+  "explanation": "Self-assigned follow-ups hurt capacity and travel balance.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l062"
+ },
+ {
+  "category": "Launch Playbook",
+  "difficulty": "medium",
+  "question": "In scheduling, what does DNR mean?",
+  "correct": "Do not reassign",
+  "wrong": [
+   "Did not respond",
+   "Delivered, no review",
+   "Design needs rework"
+  ],
+  "explanation": "Trainers can no longer mark a practice DNR themselves.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l063"
+ },
+ {
+  "category": "Launch Playbook",
+  "difficulty": "hard",
+  "question": "Why do self-assigned field follow-ups put launches at risk?",
+  "correct": "They limit capacity and can make travel to nearby launches impossible",
+  "wrong": [
+   "They lower the trainer's scorecard",
+   "They skip the customer's approval",
+   "They break the Salesforce sync"
+  ],
+  "explanation": "A cross-country follow-up can block the next day's launch.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l064"
+ },
+ {
+  "category": "Launch Playbook",
+  "difficulty": "medium",
+  "question": "A practice requests a specific trainer. What can that trainer offer?",
+  "correct": "An order review with themselves when they're available",
+  "wrong": [
+   "A field visit on any date",
+   "A free scanner",
+   "A new launch date"
+  ],
+  "explanation": "Otherwise lean toward virtual, and escalate only if needed.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l065"
+ },
+ {
+  "category": "Launch Playbook",
+  "difficulty": "medium",
+  "question": "When a launch is split in two, who schedules Part 2?",
+  "correct": "The same trainer who ran Part 1",
+  "wrong": [
+   "Whoever has the lightest calendar",
+   "The training coordinator, any trainer",
+   "The practice"
+  ],
+  "explanation": "A clear standard to avoid ownership confusion.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l066"
+ },
+ {
+  "category": "Launch Playbook",
+  "difficulty": "medium",
+  "question": "Who owns a split launch for completion metrics and case-submission credit?",
+  "correct": "The trainer who completed Part 1",
+  "wrong": [
+   "The trainer who finishes Part 2",
+   "The lead",
+   "Whoever the AE chooses"
+  ],
+  "explanation": "The owner of record defaults to Part 1.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l067"
+ },
+ {
+  "category": "Launch Playbook",
+  "difficulty": "hard",
+  "question": "If Part 2 has to go to a different trainer, what should happen?",
+  "correct": "Document the reassignment",
+  "wrong": [
+   "Nothing, it's automatic",
+   "Notify the practice by text",
+   "Reset the metrics"
+  ],
+  "explanation": "So it's clear who owns the outcome later.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l068"
+ },
+ {
+  "category": "Launch Playbook",
+  "difficulty": "medium",
+  "question": "Which calendar should trainers treat as the primary source of truth?",
+  "correct": "Their Salesforce calendar",
+  "wrong": [
+   "Their personal phone calendar",
+   "The shared team spreadsheet",
+   "Google Calendar"
+  ],
+  "explanation": "Salesforce-to-Google sync issues are being fixed, so Salesforce wins.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l069"
+ },
+ {
+  "category": "Launch Playbook",
+  "difficulty": "medium",
+  "question": "How should a trainer's approved time off be recorded?",
+  "correct": "Submitted through their lead so it's added to Salesforce",
+  "wrong": [
+   "Typed onto their Google Calendar",
+   "Posted in the team channel",
+   "Written in their 1:1 doc"
+  ],
+  "explanation": "Trainers should not put time off on their Google Calendar.",
+  "source": "Slack #training-bizsystems (private channel)",
+  "id": "l070"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "How many competencies are on the Launch Outcome Scorecard?",
+  "correct": "Five",
+  "wrong": [
+   "Three",
+   "Seven",
+   "Ten"
+  ],
+  "explanation": "Features → Value, Case Commitment, Objections, Urgency and Next Touch Point.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l071"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "Which of these is NOT one of the five Launch Outcome competencies?",
+  "correct": "Scanner calibration",
+  "wrong": [
+   "Features → Value",
+   "Case Commitment",
+   "Urgency"
+  ],
+  "explanation": "The five are Features → Value, Case Commitment, Objections, Urgency and Next Touch Point.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l072"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "Which competency is about tying product features to what matters to the practice?",
+  "correct": "Features → Value",
+  "wrong": [
+   "Next Touch Point",
+   "Urgency",
+   "Objections"
+  ],
+  "explanation": "Translating features into practice value.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l073"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "Which competency is about ending with a specific, dated follow-up?",
+  "correct": "Next Touch Point",
+  "wrong": [
+   "Case Commitment",
+   "Urgency",
+   "Features → Value"
+  ],
+  "explanation": "Does the call end with a dated next step?",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l074"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "Which competency is about giving the practice a reason to act now?",
+  "correct": "Urgency",
+  "wrong": [
+   "Objections",
+   "Next Touch Point",
+   "Case Commitment"
+  ],
+  "explanation": "A trainer who creates urgency avoids stalls.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l075"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "Which competency is about resolving a doctor's concerns?",
+  "correct": "Objections",
+  "wrong": [
+   "Urgency",
+   "Features → Value",
+   "Case Commitment"
+  ],
+  "explanation": "Handling pushback in the moment.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l076"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "What does \"All 5 Passed\" mean?",
+  "correct": "A launch passed all five competencies",
+  "wrong": [
+   "Five launches in a row passed",
+   "The trainer passed five calls",
+   "Five practices ordered"
+  ],
+  "explanation": "It is the headline standard.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l077"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "hard",
+  "question": "Why use \"All 5 Passed\" instead of a blended average?",
+  "correct": "So a strong score in one competency can't hide a gap in another",
+  "wrong": [
+   "It's easier to calculate",
+   "Averages are not allowed in Attention",
+   "It makes the numbers look higher"
+  ],
+  "explanation": "No blended averages.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l078"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "What does \"3 in 14\" mean?",
+  "correct": "A practice places 3 orders within 14 days",
+  "wrong": [
+   "3 trainings in 14 days",
+   "3 follow-ups in 14 days",
+   "3 scanners in 14 days"
+  ],
+  "explanation": "A key early-ramp measure.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l079"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "hard",
+  "question": "Which behavior was linked to practices hitting 3 in 14 more often?",
+  "correct": "Securing a dated case commitment",
+  "wrong": [
+   "Giving a longer demo",
+   "Offering a credit",
+   "Scheduling a second launch"
+  ],
+  "explanation": "Resolving objections showed a similar gap.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l080"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "The weekly Training QA summary is built from calls tagged as what?",
+  "correct": "Launch Training, Follow-Up Training or Follow Up Call",
+  "wrong": [
+   "Sales Demo, Renewal or Onboarding",
+   "Support, Billing or Escalation",
+   "Any call longer than 5 minutes"
+  ],
+  "explanation": "Untagged or mis-tagged calls aren't included.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l081"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "Which tool scores every launch on the Launch Outcome Scorecard?",
+  "correct": "Attention",
+  "wrong": [
+   "Zendesk",
+   "Looker",
+   "CloudTalk"
+  ],
+  "explanation": "Attention records, scores and links to call recordings.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l082"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "When does the automated weekly Training QA summary post in the ops channel?",
+  "correct": "Monday morning",
+  "wrong": [
+   "Wednesday afternoon",
+   "Friday evening",
+   "The 1st of each month"
+  ],
+  "explanation": "It links to a Slack Canvas coaching workbench.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l083"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "What is the Weekly QA Coaching Canvas for?",
+  "correct": "Trainer-by-trainer breakdowns, flagged recordings and model calls for coaching",
+  "wrong": [
+   "Booking field follow-ups",
+   "Approving time off",
+   "Tracking equipment shipments"
+  ],
+  "explanation": "Leads prep their weekly coaching plans from it.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l084"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "hard",
+  "question": "How is each lead's weekly coaching priority chosen?",
+  "correct": "Their team's lowest-scoring competency is named",
+  "wrong": [
+   "The lead picks any one",
+   "The highest-scoring competency",
+   "The one with the most calls"
+  ],
+  "explanation": "One coaching priority per team, so the week has a clear focus.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l085"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "hard",
+  "question": "In recent QA analysis, objection failures were far more common when which competency also failed?",
+  "correct": "Case Commitment",
+  "wrong": [
+   "Urgency",
+   "Next Touch Point",
+   "Features → Value"
+  ],
+  "explanation": "The two tend to fail together.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l086"
+ },
+ {
+  "category": "Scorecard & Metrics",
+  "difficulty": "medium",
+  "question": "As Dandy moves to a 15-order model, trainers are coached to act more like what?",
+  "correct": "Owners of their practices rather than task takers",
+  "wrong": [
+   "Product demonstrators",
+   "Support agents",
+   "Scheduling coordinators"
+  ],
+  "explanation": "Account owners, not educational leaders.",
+  "source": "Slack DMs (paraphrased, unattributed)",
+  "id": "l087"
+ },
+ {
+  "category": "Tools & Systems",
+  "difficulty": "easy",
+  "question": "What is The Bite?",
+  "correct": "Dandy's internal knowledge hub for newsletters, policies and calendars",
+  "wrong": [
+   "A weekly lunch order",
+   "The company podcast",
+   "A scanner firmware update"
+  ],
+  "explanation": "Newsletters, HR pages, holiday calendars and stipend info live there.",
+  "source": "Slack #training-team-ops (private channel); Slack #cx-mgmt-updates, #trainer-onboarding",
+  "id": "l088"
+ },
+ {
+  "category": "Tools & Systems",
+  "difficulty": "medium",
+  "question": "Trainers must do what with each weekly training newsletter in The Bite?",
+  "correct": "Acknowledge it",
+  "wrong": [
+   "Print it",
+   "Forward it to a practice",
+   "Rewrite it for their pod"
+  ],
+  "explanation": "Acknowledgment is tracked and reminded each week.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l089"
+ },
+ {
+  "category": "Tools & Systems",
+  "difficulty": "medium",
+  "question": "The weekly Letter AI role play is posted Monday. When is it due?",
+  "correct": "Friday",
+  "wrong": [
+   "Tuesday",
+   "Wednesday",
+   "The following Monday"
+  ],
+  "explanation": "It takes 5 to 10 minutes, so do it early.",
+  "source": "Slack #training-team-ops (private channel); Slack lead team rhythm post",
+  "id": "l090"
+ },
+ {
+  "category": "Tools & Systems",
+  "difficulty": "medium",
+  "question": "What does Letter AI give trainers?",
+  "correct": "AI role-play practice",
+  "wrong": [
+   "A call phone line",
+   "A scheduling calendar",
+   "A scanner simulator"
+  ],
+  "explanation": "Role plays cover skills like case commitment.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l091"
+ },
+ {
+  "category": "Tools & Systems",
+  "difficulty": "medium",
+  "question": "What is CloudTalk used for?",
+  "correct": "Phone calls with practices",
+  "wrong": [
+   "Design review",
+   "Expense approval",
+   "Equipment tracking"
+  ],
+  "explanation": "Leads listen to calls there to get close to customers.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l092"
+ },
+ {
+  "category": "Tools & Systems",
+  "difficulty": "medium",
+  "question": "What is Dandy Vibes?",
+  "correct": "An internal platform for building and hosting Dandians' own apps",
+  "wrong": [
+   "A customer app store",
+   "The company holiday calendar",
+   "A scanner accessory"
+  ],
+  "explanation": "The Lead Project Tracker and the newsletter compliance view run on it.",
+  "source": "Slack #all-dandians / #cheers-around-the-world; Slack #team-training-leads (private channel)",
+  "id": "l093"
+ },
+ {
+  "category": "Tools & Systems",
+  "difficulty": "medium",
+  "question": "About how long should the weekly Lead Project Tracker update take?",
+  "correct": "5 to 10 minutes",
+  "wrong": [
+   "1 hour",
+   "30 minutes",
+   "Half a day"
+  ],
+  "explanation": "A quick weekly update on active items, used to unblock each other.",
+  "source": "Slack #team-training-leads (private channel)",
+  "id": "l094"
+ },
+ {
+  "category": "Tools & Systems",
+  "difficulty": "hard",
+  "question": "Leads approve Deel reimbursement requests for international trainers by when?",
+  "correct": "The 15th of each month",
+  "wrong": [
+   "The last day of the month",
+   "Within 24 hours",
+   "Quarterly"
+  ],
+  "explanation": "A reminder from training ops. Finance may change platforms later.",
+  "source": "Slack #training-team-ops (private channel)",
+  "id": "l095"
+ },
+ {
+  "category": "Tools & Systems",
+  "difficulty": "medium",
+  "question": "Where can you find WFH equipment and gym stipend details?",
+  "correct": "The Bite",
+  "wrong": [
+   "The scanner manual",
+   "A trainer's offer letter",
+   "Zendesk macros"
+  ],
+  "explanation": "Reviewing the expense policy is part of week one.",
+  "source": "Slack #trainer-onboarding (private channel)",
+  "id": "l096"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "easy",
+  "question": "How much PTO does a full-time employee on the Training team receive per year?",
+  "correct": "20 days (160 hours)",
+  "wrong": [
+   "10 days (80 hours)",
+   "15 days (120 hours)",
+   "30 days (240 hours)"
+  ],
+  "explanation": "Issued on an accrual basis.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l097"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "How is PTO issued over the year?",
+  "correct": "Accrued equally across each paycheck",
+  "wrong": [
+   "All at once in January",
+   "Quarterly",
+   "After each full year of service"
+  ],
+  "explanation": "Prorated in the first calendar year.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l098"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "How many days of un-accrued PTO can an employee borrow in a calendar year?",
+  "correct": "Up to 5 days",
+  "wrong": [
+   "None",
+   "Up to 2 days",
+   "Up to 10 days"
+  ],
+  "explanation": "Borrowed time is owed back if they leave before accruing it.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l099"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "How much unused PTO can roll over to the next calendar year?",
+  "correct": "Up to 5 days (40 hours)",
+  "wrong": [
+   "Nothing",
+   "Up to 10 days",
+   "All of it"
+  ],
+  "explanation": "Anything beyond that is paid out.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l100"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "easy",
+  "question": "How much protected sick time (STO) do employees get each year?",
+  "correct": "80 hours (10 days)",
+  "wrong": [
+   "40 hours (5 days)",
+   "120 hours (15 days)",
+   "160 hours (20 days)"
+  ],
+  "explanation": "Front-loaded at the start of the calendar year.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l101"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "Does unused sick time roll over to the next year?",
+  "correct": "No, it expires",
+  "wrong": [
+   "Yes, up to 5 days",
+   "Yes, all of it",
+   "It's paid out at year end"
+  ],
+  "explanation": "Unless local law says otherwise.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l102"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "In what increments can STO be used?",
+  "correct": "15 minutes",
+  "wrong": [
+   "1 hour",
+   "30 minutes",
+   "Half days only"
+  ],
+  "explanation": "No usage waiting period either.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l103"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "How far in advance should PTO be requested to be protected time?",
+  "correct": "At least 2 weeks",
+  "wrong": [
+   "24 hours",
+   "1 week",
+   "1 month"
+  ],
+  "explanation": "Requests inside 2 weeks are treated differently.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l104"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "What is a \"Capacity Day\"?",
+  "correct": "A day when approved PTO is already at capacity, so no more requests can be approved",
+  "wrong": [
+   "A day with extra training volume bonuses",
+   "A company holiday",
+   "A day with no field trainings"
+  ],
+  "explanation": "Even a request made 2+ weeks ahead can be denied.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l105"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "What counts as Unapproved Time Off (UTO)?",
+  "correct": "A request made inside 2 weeks, on a Capacity Day, or beyond allotted time",
+  "wrong": [
+   "Any request over one day",
+   "Any request made on a Friday",
+   "A request made by a part-time employee"
+  ],
+  "explanation": "UTO is unprotected time.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l106"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "hard",
+  "question": "As general guidance, up to what share of the applicable workforce can be approved off?",
+  "correct": "20%",
+  "wrong": [
+   "5%",
+   "50%",
+   "75%"
+  ],
+  "explanation": "The company makes the final call based on coverage.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l107"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "When might HR ask for documentation for sick time?",
+  "correct": "After more than 3 consecutive days",
+  "wrong": [
+   "After any sick day",
+   "Never",
+   "After 1 hour"
+  ],
+  "explanation": "No doctor's note is required for fewer than 3 consecutive days.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l108"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "A temporary personal internet outage lasts under an hour. What's the usual handling?",
+  "correct": "Make up the time by flexing within the same week, at the supervisor's discretion",
+  "wrong": [
+   "Automatically use PTO",
+   "Mark it as UTO",
+   "Nothing is needed"
+  ],
+  "explanation": "Multiple outages may require STO or PTO.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l109"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "What internet speed does the policy recommend?",
+  "correct": "At least 25 Mbps up and down",
+  "wrong": [
+   "5 Mbps",
+   "10 Mbps",
+   "1 Gbps"
+  ],
+  "explanation": "More if streaming during the day (150-300 Mbps download).",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l110"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "hard",
+  "question": "What does Dandy 'may' provide for natural disasters that cause loss of power?",
+  "correct": "Up to 3 days of Natural Disaster Leave",
+  "wrong": [
+   "Up to 1 day",
+   "Up to 2 weeks",
+   "Nothing, ever"
+  ],
+  "explanation": "Not generally required by law, and at Dandy's discretion.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l111"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "Who follows country-specific PTO guidelines issued by Deel?",
+  "correct": "International employees",
+  "wrong": [
+   "Part-time employees",
+   "New hires in week one",
+   "Pod leads"
+  ],
+  "explanation": "US full-time employees follow the training policy.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l112"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "Who is eligible for PTO under the Training policy?",
+  "correct": "US-based full-time employees scheduled for 30+ hours a week",
+  "wrong": [
+   "Everyone including contractors",
+   "Anyone with a year of tenure",
+   "Only leads"
+  ],
+  "explanation": "Part-time employees remain eligible for STO and holidays.",
+  "source": "Training Defined Time Off Policy (Google Doc, last edited Sep 2026)",
+  "id": "l113"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "How are holiday-adjacent time-off requests approved?",
+  "correct": "First come, first served, via the holiday PTO form",
+  "wrong": [
+   "By seniority",
+   "By lottery",
+   "By lead preference"
+  ],
+  "explanation": "Company holidays themselves need no request.",
+  "source": "Slack #training_department, #team-training-leads (private)",
+  "id": "l114"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "Which of these is a company holiday trainers don't need to request off?",
+  "correct": "The day after Thanksgiving",
+  "wrong": [
+   "Halloween",
+   "Columbus Day",
+   "New Year's Eve"
+  ],
+  "explanation": "Thanksgiving, the day after, Christmas Eve, Christmas and New Year's Day.",
+  "source": "Slack #training_department (private)",
+  "id": "l115"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "medium",
+  "question": "On days with no field trainings, like the day before Thanksgiving, are trainers off?",
+  "correct": "No, they're still work days; time off must be requested",
+  "wrong": [
+   "Yes, automatically",
+   "Only field trainers are off",
+   "Only virtual trainers are off"
+  ],
+  "explanation": "Field trainings just aren't scheduled.",
+  "source": "Slack #training_department (private)",
+  "id": "l116"
+ },
+ {
+  "category": "Time Off Policy",
+  "difficulty": "hard",
+  "question": "Reimbursement expenses submitted more than 30 days later, what does the policy say?",
+  "correct": "They may be rejected",
+  "wrong": [
+   "They are always rejected",
+   "They are always approved",
+   "They need CEO approval"
+  ],
+  "explanation": "Leads decide based on history and context.",
+  "source": "Slack #team-training-leads (private)",
+  "id": "l117"
+ },
+ {
+  "category": "Training Terms",
+  "difficulty": "easy",
+  "question": "What does TC stand for on the training team?",
+  "correct": "Training Coordinator",
+  "wrong": [
+   "Team Captain",
+   "Territory Contact",
+   "Technical Consultant"
+  ],
+  "explanation": "TCs place calendar blocks and handle escalations.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l118"
+ },
+ {
+  "category": "Training Terms",
+  "difficulty": "medium",
+  "question": "What does STS stand for?",
+  "correct": "Sales and Training Specialist",
+  "wrong": [
+   "Scan to Surface",
+   "Standard Turnaround Schedule",
+   "Support Team Supervisor"
+  ],
+  "explanation": "Specialists for aligners, sleep and implants follow-ups.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l119"
+ },
+ {
+  "category": "Training Terms",
+  "difficulty": "medium",
+  "question": "What does KOC stand for?",
+  "correct": "Kick Off Call",
+  "wrong": [
+   "Key Operations Check",
+   "Knowledge of Crowns",
+   "Kit Order Confirmation"
+  ],
+  "explanation": "The call that starts a practice's journey.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l120"
+ },
+ {
+  "category": "Training Terms",
+  "difficulty": "medium",
+  "question": "What does OBC stand for?",
+  "correct": "Onboarding Champion",
+  "wrong": [
+   "Order Batch Control",
+   "Office Billing Contact",
+   "Online Booking Calendar"
+  ],
+  "explanation": "See also Setup Champion.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l121"
+ },
+ {
+  "category": "Training Terms",
+  "difficulty": "medium",
+  "question": "At Dandy, a \"ramped\" practice has how many lifetime orders?",
+  "correct": "50+",
+  "wrong": [
+   "10+",
+   "25+",
+   "100+"
+  ],
+  "explanation": "The glossary's definition.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l122"
+ },
+ {
+  "category": "Training Terms",
+  "difficulty": "hard",
+  "question": "What does NTS stand for?",
+  "correct": "New Training Shipment",
+  "wrong": [
+   "Next Ticket Status",
+   "National Territory Sales",
+   "Night guard Tray Set"
+  ],
+  "explanation": "Listed in the glossary.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l123"
+ },
+ {
+  "category": "Training Terms",
+  "difficulty": "medium",
+  "question": "What does CSL stand for?",
+  "correct": "Customer Success Lead",
+  "wrong": [
+   "Clinical Support Lead",
+   "Case Scheduling Log",
+   "Crown Service Level"
+  ],
+  "explanation": "A leadership role in CX.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l124"
+ },
+ {
+  "category": "Training Terms",
+  "difficulty": "medium",
+  "question": "What does C+R mean?",
+  "correct": "Cancel and resubmit",
+  "wrong": [
+   "Check and Review",
+   "Credit and Refund",
+   "Crown plus Restoration"
+  ],
+  "explanation": "A workflow for customers and CX to self-service order changes.",
+  "source": "Dandy Glossary & Acronyms (uploaded PDF)",
+  "id": "l125"
+ }
+]

@@ -1,0 +1,25 @@
+{
+  "name": "dandy-trivia",
+  "version": "1.0.0",
+  "description": "Real-time multiplayer Dandy trivia",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/run.js",
+    "test:fast": "node test/run.js --fast",
+    "test:ui": "node test/ui.js",
+    "test:load": "node test/load.js",
+    "build:questions": "python3 scripts/build_questions.py",
+    "build:lead": "python3 scripts/build_lead_questions.py"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "jsdom": "^30.1.3"
+  }
+}
